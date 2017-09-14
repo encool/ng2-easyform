@@ -11,7 +11,7 @@ import { UIComponent } from '../../core/'
     template: `
 <md-input-container [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxGrow="0" style="width: 100%;">
   <input mdInput [mdDatepicker]="myDatepicker" [placeholder]="label" [formControl]="formControl">
-  <button mdSuffix [mdDatepickerToggle]="myDatepicker"></button>
+  <md-datepicker-toggle mdSuffix [for]="myDatepicker"></md-datepicker-toggle>
   <md-datepicker [touchUi]="touchUi" #myDatepicker></md-datepicker>    
   <md-error *ngIf="formControl.hasError('mdDatepickerParse');else elseBlock">
   <strong>时间格式不正确</strong>
