@@ -1,6 +1,8 @@
 import { ValidatorFn, AsyncValidatorFn, Validators, AbstractControl } from '@angular/forms';
+import { Queryable } from './queryable'
+import { QueryOperate } from './query-operate'
 
-export abstract class FieldBase<T>{
+export abstract class FieldBase<T> implements Queryable {
   value?: T;
   id?: string
   selector?: string
@@ -20,6 +22,7 @@ export abstract class FieldBase<T>{
   params?: any
   statusChange?: (string) => void
   valueChange?: (string) => void
+  op?: QueryOperate
   _check?: Function //各自field的check函数？
   _view?: any
   _control?: AbstractControl
@@ -42,6 +45,7 @@ export abstract class FieldBase<T>{
     hidden?: boolean
     statusChange?: (string) => void
     valueChange?: (any) => void
+    op?: QueryOperate
     params?: Object
   } = {}) {
     // debugger
@@ -63,6 +67,7 @@ export abstract class FieldBase<T>{
     this.hidden = options.hidden == null ? false : options.hidden
     this.statusChange = options.statusChange
     this.valueChange = options.valueChange
+    this.op = options.op || QueryOperate.cn
     this.params = options.params
   }
 }
