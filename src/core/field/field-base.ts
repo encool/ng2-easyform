@@ -67,7 +67,7 @@ export abstract class FieldBase<T> implements Queryable {
     this.hidden = options.hidden == null ? false : options.hidden
     this.statusChange = options.statusChange
     this.valueChange = options.valueChange
-    this.op = options.op || QueryOperate.cn
+    this.op = options.op || QueryOperate.nomal
     this.params = options.params
   }
 }
