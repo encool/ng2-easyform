@@ -2,15 +2,15 @@ export class QueryOperate {
     advanced: boolean = false
     name: string
     operate: string
-    private constructor(name: string, operate: string, advanced?: boolean) {
+    private constructor(name: string, operate: string, advanced: boolean) {
         this.name = name
         this.advanced = advanced
         this.operate = operate
     }
 
     static nomal: QueryOperate = new QueryOperate("nomal", "nomal", false)	//非高级查询
-    static eq: QueryOperate = new QueryOperate("eq", "=")	//=	equal
-    static cn: QueryOperate = new QueryOperate("cn", "LIKE")	//LIKE '%data%'	
+    static eq: QueryOperate = new QueryOperate("eq", "=", true)	//=	equal
+    static cn: QueryOperate = new QueryOperate("cn", "LIKE", true)	//LIKE '%data%'	
 
     // ne	!=	not equal
     // lt	<	less than
