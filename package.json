@@ -16,8 +16,10 @@
   "author": "qiao.li",
   "license": "MIT",
   "dependencies": {
+    "@angular/cdk": "2.0.0-beta.10",
+    "classlist.js": "^1.1.20150312",
     "ng-zorro-antd": "~0.5.0",
-    "@angular/cdk": "2.0.0-beta.10"
+    "web-animations-js": "^2.3.1"
   },
   "devDependencies": {
     "@angular/cdk": "^2.0.0-beta.10",
@@ -34,7 +36,7 @@
     "@angular/material": "2.0.0-beta.10",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
-    "@angular/router": "^4.0.0",    
+    "@angular/router": "^4.0.0",
     "typescript": "~2.5.0",
     "rxjs": "^5.4.2"
   }
