@@ -46,11 +46,9 @@ export class MdFieldsComponent implements OnInit, AfterViewInit {
     }
 
     ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
-        // debugger
         if (changes['fields'] && changes['fields'].currentValue) {
-            // debugger
             setTimeout(() => {
-                // debugger
+                this.wrapperRef.clear()
                 this.fields.forEach((field) => {
                     // debugger
                     let comp: Type<any> = uimap.get(field.selector)

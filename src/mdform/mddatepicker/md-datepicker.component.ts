@@ -1,10 +1,13 @@
 import { Input, Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms'
+
+import { MdDatepickerField } from './md-datepicker.field'
 import { UIComponent } from '../../core/'
 
 @UIComponent({
     selector: 'ef-md-datepicker',
-    component: MdDatepickerComponent
+    component: MdDatepickerComponent,
+    field: MdDatepickerField
 })
 @Component({
     selector: 'ef-md-datepicker',

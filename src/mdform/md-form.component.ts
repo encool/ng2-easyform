@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, SimpleChange, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, SimpleChange, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
 import { FieldBase } from '../core';
-import { FieldControlService } from '../core';
+import { FieldControlService, FormstatusWrap } from '../core';
 @Component({
     selector: 'ef-md-form',
     template: `
@@ -17,12 +17,15 @@ export class MdFormComponent implements OnInit {
     @Input() fields: FieldBase<any>[] = [];
     @Input() model: any = {};
 
-    @ViewChild(FormGroupDirective) ngForm: FormGroupDirective
+    @ViewChild(FormGroupDirective) ngForm: FormstatusWrap 
     form: FormGroup;
     payLoad = '';
-    constructor(private fcs: FieldControlService) {
+    _submited: boolean = false
+
+    constructor(private fcs: FieldControlService, public elementRef: ElementRef) {
 
     }
+
     ngOnInit() {
         // this.fields = _.sortBy(this.fields, "order");
         this.form = this.fcs.toFormGroup(this.fields);
@@ -38,6 +41,21 @@ export class MdFormComponent implements OnInit {
                 // this.form.updateValueAndValidity()                
             }, 0)
         }
+    }
+
+    markCheck() {
+        this.ngForm.checked = true
+    }
+
+    markUnCheck() {
+        this.ngForm.checked = false
+    }
+
+    doSubmit() {
+        this.elementRef.nativeElement.children[0].submit(function (e) {
+            e.preventDefault();
+            console.log('print something here!');
+        })
     }
 
     onSubmit() {

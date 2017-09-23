@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { MdNativeDateModule } from '@angular/material'
+import {
+  MdNativeDateModule,
+  MdButtonModule,
+} from '@angular/material'
 import { HttpModule } from '@angular/http';
 
 
@@ -11,11 +14,13 @@ import { AppComponent } from './app.component';
 import { DictdataService } from './dictdata.service';
 
 import { MdEasyformComponent } from './mdform/md-easyform.component'
+import { IndexComponent } from './index/index.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    MdEasyformComponent
+    MdEasyformComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +29,7 @@ import { MdEasyformComponent } from './mdform/md-easyform.component'
     MdNativeDateModule,
     EasyFormCoreModule,
     EasyFormMdModule,
+    MdButtonModule,
   ],
   providers: [
     { provide: EfDictdataService, useClass: DictdataService, },

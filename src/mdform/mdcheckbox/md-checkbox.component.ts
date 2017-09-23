@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms'
-// import { UIComponent } from '../../../core/decorators/ui-component.decorator'
+
+import { MdCheckboxField } from './md-checkbox.field'
 import { UIComponent } from '../../core'
 
 @UIComponent({
     selector: 'ef-md-checkbox',
-    component: MdCheckBoxComponent
+    component: MdCheckBoxComponent,
+    field: MdCheckboxField
 })
 @Component({
     selector: 'ef-md-checkbox',
@@ -21,7 +23,7 @@ import { UIComponent } from '../../core'
         {{label}}
       </md-checkbox>    
     `
-        //   [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs"  fxGrow="0"
+    //   [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs"  fxGrow="0"
 })
 export class MdCheckBoxComponent implements OnInit {
     @Input() field: any;

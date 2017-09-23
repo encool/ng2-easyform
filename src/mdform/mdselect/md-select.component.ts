@@ -8,12 +8,13 @@ import { UIComponent, EfDictdataService } from '../../core/'
 // [(ngModel)]="model" 
 @UIComponent({
     selector: 'ef-md-select',
-    component: MdSelectComponent
+    component: MdSelectComponent,
+    field: MdSelectField,
 })
 @Component({
     selector: 'ef-md-select',
     template: `
-        <md-select [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="min-height: 66px;padding-top: 15px;width: calc(100% - 5px);" 
+        <md-select [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="min-height: 51px;padding-top: 15px;width: calc(100% - 5px);" 
             [floatPlaceholder]="true" [placeholder]="label"            
             [formControl]="controll"
             floatPlaceholder="never"
@@ -70,7 +71,8 @@ export class MdSelectComponent implements OnInit {
             this.eNfxFlexXs = "100%"
             this.multiple = MdSelectComponent.isMutipleField(this.field)
             this.noneOption = this.field.noneOption
-            this.dictName = this.field.dictName || this.field.params.primaryField.dictName
+            // this.dictName = this.field.dictName || (this.field.params.primaryField ? this.field.params.primaryField.dictName : undefined)
+            this.dictName = this.field.dictName
 
             this.patchValueToView()
             this.controll.valueChanges.forEach(
@@ -78,7 +80,8 @@ export class MdSelectComponent implements OnInit {
                     this.patchValueToView()
                 }
             )
-
+            this.optionId = this.field.optionId
+            this.optionName = this.field.optionName
             if (this.field.options == undefined
                 || this.field.options.length == 0) {
                 if (this.field.optionsOb) {
@@ -88,6 +91,8 @@ export class MdSelectComponent implements OnInit {
                     this.optionId = 'dictdataName'
                     this.optionName = 'dictdataValue'
                 }
+            } else {
+                this.options = this.field.options
             }
         } else {
             if (this.options.length == 0 && this.optionsOb) {

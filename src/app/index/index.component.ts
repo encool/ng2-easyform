@@ -7,101 +7,103 @@ import {
     MdDatepickerField,
     MdSelectField,
     MdFormComponent,
-    MdCheckboxField
+    MdCheckboxField,
+    uilist,
+    uimap1,
 } from '../../../'
 
 @Component({
     selector: 'index-case',
     template: `
-    <ef-md-form [fields]="fields"></ef-md-form>
-    <div>
-    <button md-button color="primary">Primary</button>
-    <button md-button color="accent">Accent</button>
+    <div>  
+        <div style="float:left;width:300px">
+        
+            <ef-md-form #addform [fields]="fields"></ef-md-form>
+            <div>
+                <button md-button color="primary" (click)="onAdd()">添加</button>
+                <button md-button color="accent" (click)="onReset()">重置</button>
+            </div>
+        </div>
+        <div>
+        <ef-md-form #displayform [fields]="addedfields"></ef-md-form>
+        <span>form value:{{formvalue}}</span>
+        </div>
     </div>
-    <br>
-    <ef-md-form [fields]="addedfields"></ef-md-form>
     
 `,
 })
 export class IndexComponent {
 
-    fields: FieldBase<any>[]
-    addedfields: FieldBase<any>[]
+    fields: FieldBase<any>[] = []
+    addedfields: FieldBase<any>[] = []
     formvalue: string
 
-    @ViewChild(MdFormComponent) form: MdFormComponent
+    @ViewChild("addform") addform: MdFormComponent
+    @ViewChild("displayform") displayform: MdFormComponent
 
     constructor() {
     }
     ngOnInit() {
         this.fields = [
-            new MdTextinputField({
-                key: "userId",
-                label: "用户ID",
-                required: true,
-                // disabled: true,
-                span: 4,
-            }),
-            new MdTextinputField({
-                key: "userName",
-                label: "用户名",
-                required: true,
-                span: 4,
-                valueChange: (value) => {
-                    this
-                    // debugger
-                }
-            }),
-            new MdDatepickerField({
-                key: "bornTime",
-                label: "出生日期",
-                required: true,
-                span: 4,
-            }),
-            new MdDatepickerField({
-                key: "inTime",
-                label: "入职日期",
-                required: true,
-                disabled: true,
-                span: 4,
-            }),
-            new MdCheckboxField({
-                key: "enable",
-                label: "启用",
-                required: true,
-                span: 4,
-            }),
             new MdSelectField({
-                key: "gender",
-                label: "性别",
+                key: "fieldType",
+                label: "控件类别",
                 required: true,
-                span: 4,
-                dictName: '性别',
+                span: 12,
+                options: uilist,
+                optionId: "selector",
+                optionName: "name",
                 noneOption: false
             }),
-            new MdTextareaField({
-                key: "userAddress",
-                label: "地址",
-                required: false,
-                span: 4,
+            new MdTextinputField({
+                key: "key",
+                label: "字段编码",
+                required: true,
+                span: 12,
             }),
-            new MdTextareaField({
-                key: "userAddress1",
-                label: "地址1",
-                required: false,
-                span: 8,
+            new MdTextinputField({
+                key: "label",
+                label: "字段名称",
+                required: true,
+                // disabled: true,
+                span: 12,
             }),
-            new MdTextareaField({
-                key: "userAddress2",
-                label: "地址2",
-                required: false,
+            new MdTextinputField({
+                key: "span",
+                label: "占位（12栅格）",
+                required: true,
+                type: "number",
+                // disabled: true,
                 span: 12,
             }),
         ]
     }
+
+    onAdd() {
+        if (!this.addform.form.valid) {
+            this.addform.markCheck()
+            return
+        }
+        let value = this.addform.form.value
+        let uioption = uimap1.get(value.fieldType)
+        let FieldType = uioption.field
+        // debugger
+        let field = new FieldType(value)
+        this.addedfields = this.addedfields.concat([field])
+        this.addform.form.reset()
+        setTimeout(() => {
+            this.displayform.form.valueChanges.subscribe(value => {
+                this.formvalue = JSON.stringify(value)
+            })
+        });
+        this.addform.markUnCheck()
+    }
+
+    onReset() {
+        this.addform.form.reset()
+    }
+
     ngAfterViewInit() {
-        this.form.form.valueChanges.subscribe(value => {
-            this.formvalue = JSON.stringify(value)
-        })
+
     }
 }

@@ -1,11 +1,13 @@
 import { Input, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 
+import { MdTextareaField } from './md-textarea.field'
 import { UIComponent } from '../../core'
 
 @UIComponent({
     selector: 'ef-md-textarea',
-    component: MdTextareaComponent
+    component: MdTextareaComponent,
+    field: MdTextareaField
 })
 @Component({
     selector: 'ef-md-textarea',

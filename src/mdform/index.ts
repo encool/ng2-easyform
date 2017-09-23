@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 
-import { MaterialModule } from '@angular/material';
+import {
+    MdDatepickerModule,
+    MdInputModule,
+    MdSelectModule,
+    MdCheckboxModule,
+    MD_ERROR_GLOBAL_OPTIONS,
+    ErrorStateMatcher
+} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { EnFlexDirective } from './flex/en-flex'
+
+import { FormstatusWrap } from '../core'
 
 import { MdDatepickerComponent } from './mddatepicker/md-datepicker.component'
 import { MdInputComponent } from './mdinput/md-input.component'
@@ -23,7 +32,10 @@ import { MdFormComponent } from './md-form.component'
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        MaterialModule,
+        MdDatepickerModule,
+        MdInputModule,
+        MdSelectModule,
+        MdCheckboxModule,
         FlexLayoutModule,
     ],
     exports: [
@@ -52,7 +64,7 @@ import { MdFormComponent } from './md-form.component'
         EnFlexDirective,
     ],
     providers: [
-
+        { provide: MD_ERROR_GLOBAL_OPTIONS, useValue: { errorStateMatcher: myErrorStateMatcher } }
     ],
     entryComponents: [
         MdDatepickerComponent,
@@ -66,6 +78,15 @@ import { MdFormComponent } from './md-form.component'
     ]
 })
 export class EasyFormMdModule { }
+
+export function myErrorStateMatcher(control: FormControl, form: FormstatusWrap): boolean {
+    // Error when invalid control is dirty, touched, or submitted
+    // debugger
+    // const isSubmitted = form && form.submitted;
+    const isChecked = form.checked
+    return !!(control.invalid && (control.dirty || control.touched || isChecked));
+}
+
 
 // export * from './core/ant-field-base'
 // export * from './core/ant-options.field'

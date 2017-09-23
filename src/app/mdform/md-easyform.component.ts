@@ -88,7 +88,7 @@ export class MdEasyformComponent {
                 key: "userAddress",
                 label: "地址",
                 required: false,
-                span: 4,
+                span: 10,
             }),
             new MdTextareaField({
                 key: "userAddress1",

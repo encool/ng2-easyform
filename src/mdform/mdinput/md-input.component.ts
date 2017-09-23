@@ -6,7 +6,8 @@ import { MdTextinputField } from './md-input.field'
 
 @UIComponent({
     selector: 'ef-md-input',
-    component: MdInputComponent
+    component: MdInputComponent,
+    field: MdTextinputField
 })
 @Component({
     selector: 'ef-md-input',

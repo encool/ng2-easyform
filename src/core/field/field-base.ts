@@ -47,7 +47,7 @@ export abstract class FieldBase<T> implements Queryable {
     valueChange?: (any) => void
     op?: QueryOperate
     params?: Object
-  } = {}) {
+  }) {
     // debugger
     this.value = options.value;
     this.id = options.id;
