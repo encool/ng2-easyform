@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule, FormControl, FormGroupDirective, NgFo
 
 import {
     MdDatepickerModule,
+    MdNativeDateModule,
     MdInputModule,
     MdSelectModule,
     MdCheckboxModule,
@@ -33,6 +34,7 @@ import { MdFormComponent } from './md-form.component'
         FormsModule,
         ReactiveFormsModule,
         MdDatepickerModule,
+        MdNativeDateModule,
         MdInputModule,
         MdSelectModule,
         MdCheckboxModule,
