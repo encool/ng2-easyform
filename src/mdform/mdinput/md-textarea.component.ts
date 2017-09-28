@@ -7,7 +7,8 @@ import { UIComponent } from '../../core'
 @UIComponent({
     selector: 'ef-md-textarea',
     component: MdTextareaComponent,
-    field: MdTextareaField
+    field: MdTextareaField,
+    name: "MdTextareaComponent"
 })
 @Component({
     selector: 'ef-md-textarea',

@@ -1,19 +1,25 @@
 # ng2-easyform
-[![npm package](https://img.shields.io/npm/v/ng-zorro-antd.svg)](https://www.npmjs.org/package/ng2-easyform)
+[![npm package](https://img.shields.io/npm/v/ng2-easyform.svg)](https://www.npmjs.org/package/ng2-easyform)
 
-一种快速建表单的方法，抽象出字段定义。根据字段定义生成表单。
+一种快速建表单的方法，抽象出字段定义，如字段label、占位、必填、可写、值变换等。根据字段定义生成表单。
+项目状态：开发中
 
 # 使用
 
-====
-Material Form
+##
+
+npm install ng2-easyform --save
+
+## Material Form
 
 引入如下angular module
-`
+```
 import { EasyFormCoreModule, EasyFormMdModule } from 'ng2-easyform'
-`
+```
+
 In your component
-`
+
+```typescript
 import { Component, ViewChild } from '@angular/core';
 
 import {
@@ -28,7 +34,7 @@ import {
 
 @Component({
     selector: 'md-form-demo',
-    template: `
+    template: `
     <ef-md-form [fields]="fields"></ef-md-form>
     <span>表单值：{{formvalue}}</span>
 `,
@@ -58,8 +64,8 @@ export class MdEasyformComponent {
                 span: 4,
                 valueChange: (value) => {
 
-                }
-            }),
+                } //值变换
+            }),
             new MdDatepickerField({
                 key: "bornTime",
                 label: "出生日期",
@@ -113,9 +119,11 @@ export class MdEasyformComponent {
         })
     }
 }
-`
-====
-Ant Form
+```
+## Ant Form
 
 正在整合中
+
+# demo
+[demo](http://ef.4vvvv.cn)
 

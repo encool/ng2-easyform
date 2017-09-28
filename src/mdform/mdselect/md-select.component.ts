@@ -10,6 +10,7 @@ import { UIComponent, EfDictdataService } from '../../core/'
     selector: 'ef-md-select',
     component: MdSelectComponent,
     field: MdSelectField,
+    name: "MdSelectComponent"
 })
 @Component({
     selector: 'ef-md-select',

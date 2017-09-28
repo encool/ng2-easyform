@@ -7,7 +7,8 @@ import { UIComponent } from '../../core'
 @UIComponent({
     selector: 'ef-md-checkbox',
     component: MdCheckBoxComponent,
-    field: MdCheckboxField
+    field: MdCheckboxField,
+    name: "MdCheckBoxComponent"
 })
 @Component({
     selector: 'ef-md-checkbox',
