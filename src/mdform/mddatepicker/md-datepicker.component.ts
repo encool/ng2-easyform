@@ -7,7 +7,8 @@ import { UIComponent } from '../../core/'
 @UIComponent({
     selector: 'ef-md-datepicker',
     component: MdDatepickerComponent,
-    field: MdDatepickerField
+    field: MdDatepickerField,
+    name: "MdFieldGroupComponent"
 })
 @Component({
     selector: 'ef-md-datepicker',

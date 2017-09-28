@@ -6,7 +6,8 @@ import { UIComponent } from '../../core/'
 
 @UIComponent({
     selector: 'ef-md-field-group',
-    component: MdFieldGroupComponent
+    component: MdFieldGroupComponent,
+    name: "MdFieldGroupComponent"
 })
 @Component({
     selector: 'ef-md-field-group',

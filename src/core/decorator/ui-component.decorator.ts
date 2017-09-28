@@ -13,9 +13,10 @@ export function UIComponent(options: {
     field?: typeof FieldBase
 }) {
     // 
-    if (!options.name) {
+    if (!options["name"]) {
         let l = options.component.name.length
-        options.name = options.component.name.substr(0, l - 9)
+        // options["name"] = options.component.name.substr(0, l - 9)
+        options.name = options.component.name
     }
     uilist.push(options)
     uimap.set(options.selector, options.component)
