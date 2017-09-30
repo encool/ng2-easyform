@@ -1,0 +1,174 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.2
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'F:\\angular2\\ng2-easyform',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\qiao\AppData\Roaming\npm-cache\ng2-easyform\0.0.8-beta.8\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\qiao\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle ng2-easyform@0.0.8-beta.8~prepublish: ng2-easyform@0.0.8-beta.8
+11 silly lifecycle ng2-easyform@0.0.8-beta.8~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\qiao\\AppData\\Roaming\\npm-cache\\ng2-easyform\\0.0.8-beta.8\\package.tgz',
+12 verbose tar pack   'F:\\angular2\\ng2-easyform' ]
+13 verbose tarball C:\Users\qiao\AppData\Roaming\npm-cache\ng2-easyform\0.0.8-beta.8\package.tgz
+14 verbose folder F:\angular2\ng2-easyform
+15 verbose addLocalTarball adding from inside cache C:\Users\qiao\AppData\Roaming\npm-cache\ng2-easyform\0.0.8-beta.8\package.tgz
+16 verbose correctMkdir C:\Users\qiao\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd ng2-easyform@0.0.8-beta.8
+18 verbose afterAdd C:\Users\qiao\AppData\Roaming\npm-cache\ng2-easyform\0.0.8-beta.8\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\qiao\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\qiao\AppData\Roaming\npm-cache\ng2-easyform\0.0.8-beta.8\package\package.json written
+21 silly publish { name: 'ng2-easyform',
+21 silly publish   version: '0.0.8-beta.8',
+21 silly publish   description: 'angular2 angular4 ng2',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   keywords: [ 'angular2', 'angular4', 'ng2', 'easyform', 'quickform' ],
+21 silly publish   author: { name: 'qiao.li' },
+21 silly publish   license: 'MIT',
+21 silly publish   dependencies: { '@angular/cdk': '2.0.0-beta.11', 'ng-zorro-antd': '~0.5.0' },
+21 silly publish   devDependencies:
+21 silly publish    { '@angular/cdk': '^2.0.0-beta.11',
+21 silly publish      '@angular/animations': '^4.0.0',
+21 silly publish      '@angular/cli': '^1.4.1',
+21 silly publish      '@angular/common': '^4.0.0',
+21 silly publish      '@angular/compiler': '^4.0.0',
+21 silly publish      '@angular/compiler-cli': '^4.3.6',
+21 silly publish      '@angular/core': '^4.0.0',
+21 silly publish      '@angular/flex-layout': '^2.0.0-beta.9',
+21 silly publish      '@angular/forms': '^4.0.0',
+21 silly publish      '@angular/http': '^4.0.0',
+21 silly publish      '@angular/language-service': '^4.0.0',
+21 silly publish      '@angular/material': '^2.0.0-beta.11',
+21 silly publish      '@angular/platform-browser': '^4.0.0',
+21 silly publish      '@angular/platform-browser-dynamic': '^4.0.0',
+21 silly publish      '@angular/router': '^4.0.0',
+21 silly publish      typescript: '~2.5.0',
+21 silly publish      rxjs: '^5.4.2' },
+21 silly publish   readme: '# ng2-easyform\r\n[![npm package](https://img.shields.io/npm/v/ng2-easyform.svg)](https://www.npmjs.org/package/ng2-easyform)\r\n\r\n一种快速建表单的方法，抽象出字段定义，如字段label、占位、必填、可写、值变换等。根据字段定义生成表单。\r\n项目状态：开发中\r\n\r\n# 使用\r\n\r\n##\r\n\r\nnpm install ng2-easyform --save\r\n\r\n## Material Form\r\n\r\n引入如下angular module\r\n```\r\nimport { EasyFormCoreModule, EasyFormMdModule } from \'ng2-easyform\'\r\n```\r\n\r\nIn your component\r\n\r\n```typescript\r\nimport { Component, ViewChild } from \'@angular/core\';\r\n\r\nimport {\r\n    FieldBase,\r\n    MdTextinputField,\r\n    MdTextareaField,\r\n    MdDatepickerField,\r\n    MdSelectField,\r\n    MdFormComponent,\r\n    MdCheckboxField\r\n} from \'ng2-easyform\'\r\n\r\n@Component({\r\n    selector: \'md-form-demo\',\r\n    template: `\r\n    <ef-md-form [fields]="fields"></ef-md-form>\r\n    <span>表单值：{{formvalue}}</span>\r\n`,\r\n})\r\nexport class MdEasyformComponent {\r\n\r\n    fields: FieldBase<any>[]\r\n    formvalue: string\r\n\r\n    @ViewChild(MdFormComponent) form: MdFormComponent\r\n\r\n    constructor() {\r\n    }\r\n    ngOnInit() {\r\n        this.fields = [\r\n            new MdTextinputField({\r\n                key: "userId",\r\n                label: "用户ID",\r\n                required: true,\r\n                // disabled: true,\r\n                span: 4,\r\n            }),\r\n            new MdTextinputField({\r\n                key: "userName",\r\n                label: "用户名",\r\n                required: true,\r\n                span: 4,\r\n                valueChange: (value) => {\r\n\r\n                } //值变换\r\n            }),\r\n            new MdDatepickerField({\r\n                key: "bornTime",\r\n                label: "出生日期",\r\n                required: true,\r\n                span: 4,\r\n            }),\r\n            new MdDatepickerField({\r\n                key: "inTime",\r\n                label: "入职日期",\r\n                required: true,\r\n                disabled: true,\r\n                span: 4,\r\n            }),\r\n            new MdCheckboxField({\r\n                key: "enable",\r\n                label: "启用",\r\n                required: true,\r\n                span: 4,\r\n            }),\r\n            new MdSelectField({\r\n                key: "gender",\r\n                label: "性别",\r\n                required: true,\r\n                span: 4,\r\n                dictName: \'性别\',\r\n                noneOption: false\r\n            }),\r\n            new MdTextareaField({\r\n                key: "userAddress",\r\n                label: "地址",\r\n                required: false,\r\n                span: 10,\r\n            }),\r\n            new MdTextareaField({\r\n                key: "userAddress1",\r\n                label: "地址1",\r\n                required: false,\r\n                span: 8,\r\n            }),\r\n            new MdTextareaField({\r\n                key: "userAddress2",\r\n                label: "地址2",\r\n                required: false,\r\n                span: 12,\r\n            }),\r\n        ]\r\n    }\r\n    ngAfterViewInit() {\r\n        this.form.form.valueChanges.subscribe(value => {\r\n            this.formvalue = JSON.stringify(value)\r\n        })\r\n    }\r\n}\r\n```\r\n## Ant Form\r\n\r\n正在整合中\r\n\r\n# demo\r\n[demo](http://ef.4vvvv.cn)\r\n\r\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'd65d4918f2593bc96fc7a60b627b0d6b7bbf25c1',
+21 silly publish   _id: 'ng2-easyform@0.0.8-beta.8',
+21 silly publish   _shasum: 'a0c12f132616554c23ddcffc950928316d421a27',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name ng2-easyform
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'ng2-easyform',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'ng2-easyform',
+26 silly mapToRegistry   name: 'ng2-easyform',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/ng2-easyform
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading C:\Users\qiao\AppData\Roaming\npm-cache\ng2-easyform\0.0.8-beta.8\package.tgz
+30 verbose request uri https://registry.npmjs.org/ng2-easyform
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 10:56:39
+33 verbose request using bearer token for auth
+34 verbose request id 6e1618c2fcd16483
+35 http request PUT https://registry.npmjs.org/ng2-easyform
+36 http 503 https://registry.npmjs.org/ng2-easyform
+37 verbose bad json <?xml version="1.0" encoding="utf-8"?>
+37 verbose bad json <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+37 verbose bad json  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+37 verbose bad json <html>
+37 verbose bad json   <head>
+37 verbose bad json     <title>503 Request body sent more than once</title>
+37 verbose bad json   </head>
+37 verbose bad json   <body>
+37 verbose bad json     <h1>Error 503 Request body sent more than once</h1>
+37 verbose bad json     <p>Request body sent more than once</p>
+37 verbose bad json     <h3>Guru Mediation:</h3>
+37 verbose bad json     <p>Details: cache-nrt6134-NRT 1506740190 399628514</p>
+37 verbose bad json     <hr>
+37 verbose bad json     <p>Varnish cache server</p>
+37 verbose bad json   </body>
+37 verbose bad json </html>
+38 error registry error parsing json
+39 verbose headers { server: 'Varnish',
+39 verbose headers   'retry-after': '0',
+39 verbose headers   'content-type': 'text/html; charset=utf-8',
+39 verbose headers   'content-length': '489',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   date: 'Sat, 30 Sep 2017 02:56:29 GMT',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   connection: 'close',
+39 verbose headers   'x-served-by': 'cache-nrt6134-NRT',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1506740189.347720,VS0,VE383' }
+40 info retry will retry, error on last attempt: SyntaxError: Unexpected token < in JSON at position 1
+40 info retry
+40 info retry <?xml version="1.0" encoding="utf-8"?>
+40 info retry <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+40 info retry  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+40 info retry <html>
+40 info retry   <head>
+40 info retry     <title>503 Request body sent more than once</title>
+40 info retry   </head>
+40 info retry   <body>
+40 info retry     <h1>Error 503 Request body sent more than once</h1>
+40 info retry     <p>Request body sent more than once</p>
+40 info retry     <h3>Guru Mediation:</h3>
+40 info retry     <p>Details: cache-nrt6134-NRT 1506740190 399628514</p>
+40 info retry     <hr>
+40 info retry     <p>Varnish cache server</p>
+40 info retry   </body>
+40 info retry </html>
+41 info attempt registry request try #2 at 10:56:50
+42 verbose request using bearer token for auth
+43 http request PUT https://registry.npmjs.org/ng2-easyform
+44 http 403 https://registry.npmjs.org/ng2-easyform
+45 verbose headers { 'content-type': 'application/json',
+45 verbose headers   'cache-control': 'max-age=300',
+45 verbose headers   'content-length': '98',
+45 verbose headers   'accept-ranges': 'bytes',
+45 verbose headers   date: 'Sat, 30 Sep 2017 02:56:41 GMT',
+45 verbose headers   via: '1.1 varnish',
+45 verbose headers   connection: 'keep-alive',
+45 verbose headers   'x-served-by': 'cache-nrt6121-NRT',
+45 verbose headers   'x-cache': 'MISS',
+45 verbose headers   'x-cache-hits': '0',
+45 verbose headers   'x-timer': 'S1506740201.247746,VS0,VE676',
+45 verbose headers   vary: 'Accept-Encoding, Accept' }
+46 verbose request invalidating C:\Users\qiao\AppData\Roaming\npm-cache\registry.npmjs.org\ng2-easyform on PUT
+47 error publish Failed PUT 403
+48 verbose stack Error: You cannot publish over the previously published version 0.0.8-beta.8. : ng2-easyform
+48 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+48 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:290:14)
+48 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+48 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+48 verbose stack     at emitTwo (events.js:106:13)
+48 verbose stack     at Request.emit (events.js:191:7)
+48 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1048:10)
+48 verbose stack     at emitOne (events.js:96:13)
+48 verbose stack     at Request.emit (events.js:188:7)
+48 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:969:12)
+49 verbose statusCode 403
+50 verbose pkgid ng2-easyform
+51 verbose cwd F:\angular2\ng2-easyform
+52 error Windows_NT 10.0.14393
+53 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+54 error node v6.11.2
+55 error npm  v3.10.10
+56 error code E403
+57 error You cannot publish over the previously published version 0.0.8-beta.8. : ng2-easyform
+58 error If you need help, you may report this error at:
+58 error     <https://github.com/npm/npm/issues>
+59 verbose exit [ 1, true ]
