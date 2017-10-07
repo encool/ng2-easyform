@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 
 import {
-    MdDatepickerModule,
-    MdNativeDateModule,
-    MdInputModule,
-    MdSelectModule,
-    MdCheckboxModule,
-    MD_ERROR_GLOBAL_OPTIONS,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCheckboxModule,
     ErrorStateMatcher
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout'
@@ -28,16 +27,29 @@ import { MdFormComponent } from './md-form.component'
 
 // import { MdNativeDateModule } from '@angular/material'
 
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+    // isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    //   // Error when invalid control is dirty, touched, or submitted
+    //   const isSubmitted = form && form.submitted;
+    //   return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted)));
+    // }
+    isErrorState(control: FormControl | null, form: FormstatusWrap | null): boolean {
+        // Error when invalid control is dirty, touched, or submitted
+        const isChecked = form.checked
+        return !!(control.invalid && (control.dirty || control.touched || isChecked));
+    }
+}
+
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        MdDatepickerModule,
-        MdNativeDateModule,
-        MdInputModule,
-        MdSelectModule,
-        MdCheckboxModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatInputModule,
+        MatSelectModule,
+        MatCheckboxModule,
         FlexLayoutModule,
     ],
     exports: [
@@ -66,7 +78,7 @@ import { MdFormComponent } from './md-form.component'
         EnFlexDirective,
     ],
     providers: [
-        { provide: MD_ERROR_GLOBAL_OPTIONS, useValue: { errorStateMatcher: myErrorStateMatcher } }
+        { provide: ErrorStateMatcher, useClass: MyErrorStateMatcher }
     ],
     entryComponents: [
         MdDatepickerComponent,
@@ -80,15 +92,6 @@ import { MdFormComponent } from './md-form.component'
     ]
 })
 export class EasyFormMdModule { }
-
-export function myErrorStateMatcher(control: FormControl, form: FormstatusWrap): boolean {
-    // Error when invalid control is dirty, touched, or submitted
-    // debugger
-    // const isSubmitted = form && form.submitted;
-    const isChecked = form.checked
-    return !!(control.invalid && (control.dirty || control.touched || isChecked));
-}
-
 
 // export * from './core/ant-field-base'
 // export * from './core/ant-options.field'

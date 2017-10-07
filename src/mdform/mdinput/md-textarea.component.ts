@@ -14,12 +14,12 @@ import { UIComponent } from '../../core'
     selector: 'ef-md-textarea',
     template:
     `
-        <md-input-container [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="width:100%">
-          <textarea  mdInput [type]="field.type || field.params.inputType" [placeholder]="lable" [formControl]="formControl"></textarea>
-          <md-error *ngIf="formControl.hasError('required')">
+        <mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="width:100%">
+          <textarea  matInput [type]="field.type || field.params.inputType" [placeholder]="lable" [formControl]="formControl"></textarea>
+          <mat-error *ngIf="formControl.hasError('required')">
           <strong>必填项</strong>
-          </md-error>            
-        </md-input-container>      
+          </mat-error>            
+        </mat-form-field>      
   
     `
 })

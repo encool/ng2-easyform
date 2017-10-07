@@ -13,19 +13,19 @@ import { UIComponent } from '../../core/'
 @Component({
     selector: 'ef-md-datepicker',
     template: `
-<md-input-container [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxGrow="0" style="width: 100%;">
-  <input mdInput [mdDatepicker]="myDatepicker" [placeholder]="label" [formControl]="formControl">
-  <md-datepicker-toggle mdSuffix [for]="myDatepicker"></md-datepicker-toggle>
-  <md-datepicker [touchUi]="touchUi" #myDatepicker></md-datepicker>    
-  <md-error *ngIf="formControl.hasError('mdDatepickerParse');else elseBlock">
+<mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxGrow="0" style="width: 100%;">
+  <input matInput [matDatepicker]="myDatepicker" [placeholder]="label" [formControl]="formControl">
+  <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+  <mat-datepicker [touchUi]="touchUi" #myDatepicker></mat-datepicker>    
+  <mat-error *ngIf="formControl.hasError('matDatepickerParse');else elseBlock">
   <strong>时间格式不正确</strong>
-  </md-error>   
+  </mat-error>   
   <ng-template #elseBlock>
-    <md-error *ngIf="formControl.hasError('required')">
+    <mat-error *ngIf="formControl.hasError('required')">
     <strong>必填项</strong>
-    </md-error>   
+    </mat-error>   
   </ng-template>
-</md-input-container>
+</mat-form-field>
 
     `
 })

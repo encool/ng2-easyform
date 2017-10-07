@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {
-  MdNativeDateModule,
-  MdButtonModule,
+  MatNativeDateModule,
+  MatButtonModule,
 } from '@angular/material'
 import { HttpModule } from '@angular/http';
 
@@ -26,10 +26,10 @@ import { IndexComponent } from './index/index.component'
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
-    MdNativeDateModule,
+    MatNativeDateModule,
+    MatButtonModule,
     EasyFormCoreModule,
     EasyFormMdModule,
-    MdButtonModule,
   ],
   providers: [
     { provide: EfDictdataService, useClass: DictdataService, },

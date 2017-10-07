@@ -15,16 +15,17 @@ import { UIComponent, EfDictdataService } from '../../core/'
 @Component({
     selector: 'ef-md-select',
     template: `
-        <md-select [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="min-height: 51px;padding-top: 15px;width: calc(100% - 5px);" 
-            [floatPlaceholder]="true" [placeholder]="label"            
+    <mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="min-height: 51px;padding-top: 15px;width: calc(100% - 5px);">
+        <mat-select
+            [placeholder]="label"            
             [formControl]="controll"
             floatPlaceholder="never"
             [multiple]="multiple" 
             (change)=OnChange($event)>           
-            <md-option *ngIf="noneOption">无</md-option>
-            <md-option *ngFor="let option of options" [value]="option[optionId]">{{ option[optionName] }}</md-option>
-        </md-select>  
-           
+            <mat-option *ngIf="noneOption">无</mat-option>
+            <mat-option *ngFor="let option of options" [value]="option[optionId]">{{ option[optionName] }}</mat-option>
+        </mat-select>  
+    </mat-form-field>       
     `,
 })
 export class MdSelectComponent implements OnInit {
