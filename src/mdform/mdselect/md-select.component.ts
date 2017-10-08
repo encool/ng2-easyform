@@ -15,7 +15,7 @@ import { UIComponent, EfDictdataService } from '../../core/'
 @Component({
     selector: 'ef-md-select',
     template: `
-    <mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="min-height: 51px;padding-top: 15px;width: calc(100% - 5px);">
+    <mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="min-height: 51px;padding-top: 0px;width: calc(100% - 5px);">
         <mat-select
             [placeholder]="label"            
             [formControl]="controll"
@@ -25,6 +25,9 @@ import { UIComponent, EfDictdataService } from '../../core/'
             <mat-option *ngIf="noneOption">无</mat-option>
             <mat-option *ngFor="let option of options" [value]="option[optionId]">{{ option[optionName] }}</mat-option>
         </mat-select>  
+        <mat-error *ngIf="controll.hasError('required')">
+        <strong>必填项</strong>
+        </mat-error>          
     </mat-form-field>       
     `,
 })
