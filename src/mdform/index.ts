@@ -35,8 +35,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     // }
     isErrorState(control: FormControl | null, form: FormstatusWrap | null): boolean {
         // Error when invalid control is dirty, touched, or submitted
-        const isChecked = form.checked
-        return !!(control.invalid && (control.dirty || control.touched || isChecked));
+        if (control && form) {
+            const isChecked = form.checked
+            return !!(control.invalid && (control.dirty || control.touched || isChecked));
+        }
     }
 }
 
