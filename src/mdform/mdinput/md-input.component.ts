@@ -14,14 +14,14 @@ import { MdTextinputField } from './md-input.field'
     selector: 'ef-md-input',
     template:
     `
-        <md-input-container [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" 
+        <mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" 
             [hideRequiredMarker]="false"
             fxShrink="1" fxGrow="0" style="width:100%">
-          <input mdInput [type]="field.type || field.params.inputType " [placeholder]="label" [formControl]="fieldControl">
-          <md-error *ngIf="fieldControl.hasError('required')">
+          <input matInput [type]="field.type || field.params.inputType " [placeholder]="label" [formControl]="fieldControl">
+          <mat-error *ngIf="fieldControl.hasError('required')">
           <strong>必填项</strong>
-          </md-error>          
-        </md-input-container>      
+          </mat-error>          
+        </mat-form-field>      
   
     `
 })

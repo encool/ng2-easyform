@@ -13,7 +13,7 @@ import { UIComponent } from '../../core'
 @Component({
     selector: 'ef-md-checkbox',
     template: `
-      <md-checkbox
+      <mat-checkbox
           class="example-margin"
           [checked]="checked"
           [indeterminate]="indeterminate"
@@ -22,7 +22,7 @@ import { UIComponent } from '../../core'
           [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs"  fxGrow="0"
           style="width:100%;padding-bottom: 15px; min-height:66px">
         {{label}}
-      </md-checkbox>    
+      </mat-checkbox>    
     `
     //   [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs"  fxGrow="0"
 })

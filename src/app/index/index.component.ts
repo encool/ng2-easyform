@@ -20,8 +20,8 @@ import {
         
             <ef-md-form #addform [fields]="fields"></ef-md-form>
             <div>
-                <button md-button color="primary" (click)="onAdd()">添加</button>
-                <button md-button color="accent" (click)="onReset()">重置</button>
+                <button mat-button color="primary" (click)="onAdd()">添加</button>
+                <button mat-button color="accent" (click)="onReset()">重置</button>
             </div>
         </div>
         <div>
