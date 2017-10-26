@@ -15,7 +15,7 @@ import { UIComponent, EfDictdataService } from '../../core/'
 @Component({
     selector: 'ef-md-select',
     template: `
-    <mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="min-height: 51px;padding-top: 0px;width: calc(100% - 5px);">
+    <mat-form-field bsCol.sm="span" style="min-height: 51px;padding-top: 0px;width: calc(100% - 5px);">
         <mat-select
             [placeholder]="label"            
             [formControl]="controll"

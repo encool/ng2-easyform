@@ -14,9 +14,10 @@ import { MdTextinputField } from './md-input.field'
     selector: 'ef-md-input',
     template:
     `
-        <mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" 
-            [hideRequiredMarker]="false"
-            fxShrink="1" fxGrow="0" style="width:100%">
+        <mat-form-field
+            bsCol.sm="span"
+            [hideRequiredMarker]="false" 
+            style="width:100%">
           <input matInput [type]="field.type || field.params.inputType " [placeholder]="label" [formControl]="fieldControl">
           <mat-error *ngIf="fieldControl.hasError('required')">
           <strong>必填项</strong>

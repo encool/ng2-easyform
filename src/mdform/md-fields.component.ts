@@ -8,11 +8,11 @@ import { FieldBase } from '../core';
 
 import { uimap } from '../core'
 
-
+// fxLayout='row' fxLayoutWrap fxLayoutGap="15px" fxLayoutGap.xs="0px" fxLayoutAlign="start baseline" style="padding:10px;align-content:flex-start"
 @Component({
     selector: 'ef-md-fields',
     template: `
-    <div class="formContainer" fxLayout='row' fxLayoutWrap fxLayoutGap="15px" fxLayoutGap.xs="0px" fxLayoutAlign="start baseline" style="padding:10px;align-content:flex-start">
+    <div class="formContainer" bsRow>
         <ng-template #wrapper>
         </ng-template>    
     </div>
