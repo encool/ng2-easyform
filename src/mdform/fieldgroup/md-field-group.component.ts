@@ -7,16 +7,16 @@ import { UIComponent } from '../../core/'
 @UIComponent({
     selector: 'ef-md-field-group',
     component: MdFieldGroupComponent,
-    name: "MdFieldGroupComponent"
+    name: "字段Group"
 })
 @Component({
     selector: 'ef-md-field-group',
     template: `
-    <div [formGroup]="form">
-        <div [formGroup]="form" [formGroupName]="field.groupName">
+    <ng-container [formGroup]="form">
+        <ng-container [formGroupName]="field.groupName">
         	<ef-md-fields [form]="form.controls[field.groupName]" [fields]="field.fields" [model]="model"></ef-md-fields>
-        </div>
-    </div>
+        </ng-container>
+    </ng-container>
     `,
 })
 export class MdFieldGroupComponent implements OnInit {

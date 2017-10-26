@@ -10,12 +10,12 @@ import { UIComponent, EfDictdataService } from '../../core/'
     selector: 'ef-md-select',
     component: MdSelectComponent,
     field: MdSelectField,
-    name: "MdSelectComponent"
+    name: "选择框"
 })
 @Component({
     selector: 'ef-md-select',
     template: `
-    <mat-form-field bsCol.sm="span" style="min-height: 51px;padding-top: 0px;width: calc(100% - 5px);">
+    <mat-form-field [bsCol.sm]="span" [bsCol.xs]="12" style="min-height: 51px;padding-top: 0px;">
         <mat-select
             [placeholder]="label"            
             [formControl]="controll"

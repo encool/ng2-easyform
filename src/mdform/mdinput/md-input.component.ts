@@ -8,16 +8,16 @@ import { MdTextinputField } from './md-input.field'
     selector: 'ef-md-input',
     component: MdInputComponent,
     field: MdTextinputField,
-    name: "MdInputComponent"
+    name: "文本框"
 })
 @Component({
     selector: 'ef-md-input',
     template:
     `
         <mat-form-field
-            bsCol.sm="span"
-            [hideRequiredMarker]="false" 
-            style="width:100%">
+            [bsCol.sm]="span"
+            [bsCol.xs]="12"
+            [hideRequiredMarker]="false">
           <input matInput [type]="field.type || field.params.inputType " [placeholder]="label" [formControl]="fieldControl">
           <mat-error *ngIf="fieldControl.hasError('required')">
           <strong>必填项</strong>

@@ -12,7 +12,7 @@ import { uimap } from '../core'
 @Component({
     selector: 'ef-md-fields',
     template: `
-    <div class="formContainer" bsRow>
+    <div>
         <ng-template #wrapper>
         </ng-template>    
     </div>

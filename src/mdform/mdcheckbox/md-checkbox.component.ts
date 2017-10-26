@@ -8,7 +8,7 @@ import { UIComponent } from '../../core'
     selector: 'ef-md-checkbox',
     component: MdCheckBoxComponent,
     field: MdCheckboxField,
-    name: "MdCheckBoxComponent"
+    name: "CheckBox"
 })
 @Component({
     selector: 'ef-md-checkbox',
@@ -19,8 +19,8 @@ import { UIComponent } from '../../core'
           [indeterminate]="indeterminate"
           [labelPosition]="labelPosition"
           [formControl]="formControl"
-          [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs"  fxGrow="0"
-          style="width:100%;padding-bottom: 15px; min-height:66px">
+          [bsCol.sm]="span" [bsCol.xs]="12"
+          style="padding-top: 20px;padding-bottom: 15px; min-height:66px">
         {{label}}
       </mat-checkbox>    
     `

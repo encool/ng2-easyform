@@ -8,13 +8,13 @@ import { UIComponent } from '../../core'
     selector: 'ef-md-textarea',
     component: MdTextareaComponent,
     field: MdTextareaField,
-    name: "MdTextareaComponent"
+    name: "文本域"
 })
 @Component({
     selector: 'ef-md-textarea',
     template:
     `
-        <mat-form-field [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs" fxShrink="1" fxGrow="0" style="width:100%">
+        <mat-form-field [bsCol.sm]="span" [bsCol.xs]="12">
           <textarea  matInput [type]="field.type || field.params.inputType" [placeholder]="lable" [formControl]="formControl"></textarea>
           <mat-error *ngIf="formControl.hasError('required')">
           <strong>必填项</strong>

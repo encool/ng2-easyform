@@ -6,7 +6,7 @@ import {
   MatButtonModule,
 } from '@angular/material'
 import { HttpModule } from '@angular/http';
-
+import { Bootstrap3GridModule } from "ng2-bootstrap3-grid";
 
 import { EasyFormCoreModule, EasyFormMdModule, EfDictdataService } from '../../'
 
@@ -30,6 +30,7 @@ import { IndexComponent } from './index/index.component'
     MatButtonModule,
     EasyFormCoreModule,
     EasyFormMdModule,
+    Bootstrap3GridModule,
   ],
   providers: [
     { provide: EfDictdataService, useClass: DictdataService, },

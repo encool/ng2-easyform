@@ -19,7 +19,8 @@ import {
     MdDatepickerField,
     MdSelectField,
     MdFormComponent,
-    MdCheckboxField
+    MdCheckboxField,
+    MdFieldGroup
 } from '../../../'
 
 @Component({
@@ -56,6 +57,29 @@ export class MdEasyformComponent {
                     this
                     // debugger
                 }
+            }),
+            new MdFieldGroup({
+                key: "mom",
+                groupName: "mom",
+                fields: [
+                    new MdTextinputField({
+                        key: "userId",
+                        label: "用户ID",
+                        required: true,
+                        // disabled: true,
+                        span: 4,
+                    }),
+                    new MdTextinputField({
+                        key: "userName",
+                        label: "用户名",
+                        required: true,
+                        span: 4,
+                        valueChange: (value) => {
+                            this
+                            // debugger
+                        }
+                    }),
+                ]
             }),
             new MdDatepickerField({
                 key: "bornTime",

@@ -15,19 +15,22 @@ import {
 @Component({
     selector: 'index-case',
     template: `
-    <div>  
-        <div style="float:left;width:300px">
-        
-            <ef-md-form #addform [fields]="fields"></ef-md-form>
-            <div>
-                <button mat-button color="primary" (click)="onAdd()">添加</button>
-                <button mat-button color="accent" (click)="onReset()">重置</button>
+    <div bsContainer style="padding:10px">  
+        <div bsRow>
+            <div bsCol.sm="2">
+            
+                <ef-md-form #addform [fields]="fields"></ef-md-form>
+                <div>
+                    <button mat-button color="primary" (click)="onAdd()">添加</button>
+                    <button mat-button color="accent" (click)="onReset()">重置</button>
+                </div>
             </div>
+            <div bsCol.sm="10">
+                <ef-md-form #displayform [fields]="addedfields"></ef-md-form>
+                <span>form value:{{formvalue}}</span>
+            </div>       
         </div>
-        <div>
-        <ef-md-form #displayform [fields]="addedfields"></ef-md-form>
-        <span>form value:{{formvalue}}</span>
-        </div>
+
     </div>
     
 `,
