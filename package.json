@@ -4,7 +4,8 @@
   "description": "angular2 angular4 ng2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ng build --no-extract-license --prod --build-optimizer"
   },
   "keywords": [
     "angular2",
