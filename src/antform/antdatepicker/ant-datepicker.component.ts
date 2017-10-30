@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms'
 
-import { UIComponent } from '../../core/decorator/ui-component.decorator'
+import { UIComponent } from '../../core/'
 
 @UIComponent({
     selector: 'ef-ant-datepicker',

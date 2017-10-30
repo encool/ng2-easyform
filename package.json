@@ -17,8 +17,8 @@
   "author": "qiao.li",
   "license": "MIT",
   "dependencies": {
-    "@angular/cdk": "^2.0.0-beta.11",
-    "ng-zorro-antd": "~0.5.0",
+    "@angular/cdk": "2.0.0-beta.12",
+    "ng-zorro-antd": "~0.6.0-rc.2",
     "ng2-bootstrap3-grid": "^0.0.2"
   },
   "devDependencies": {

@@ -8,18 +8,20 @@ import {
 import { HttpModule } from '@angular/http';
 import { Bootstrap3GridModule } from "ng2-bootstrap3-grid";
 
-import { EasyFormCoreModule, EasyFormMdModule, EfDictdataService } from '../../'
+import { EasyFormCoreModule, EasyFormMdModule, EasyFormAntModule, EfDictdataService } from '../../'
 
 import { AppComponent } from './app.component';
 import { DictdataService } from './dictdata.service';
 
 import { MdEasyformComponent } from './mdform/md-easyform.component'
+import { AntDynamicFormComponent } from "./antform/ant-dynamic-form.component";
 import { IndexComponent } from './index/index.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MdEasyformComponent,
+    AntDynamicFormComponent,
     IndexComponent
   ],
   imports: [
@@ -30,6 +32,7 @@ import { IndexComponent } from './index/index.component'
     MatButtonModule,
     EasyFormCoreModule,
     EasyFormMdModule,
+    EasyFormAntModule,
     Bootstrap3GridModule,
   ],
   providers: [

@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
-    NzGridModule,
-    NzFormModule,
-    NzDatePickerModule,
-    NzInputModule,
-    NzRadioModule,
-    NzSelectModule,
-    NzToolTipModule,
-    NzButtonModule,
+    // NzGridModule,
+    // NzFormModule,
+    // NzDatePickerModule,
+    // NzInputModule,
+    // NzRadioModule,
+    // NzSelectModule,
+    // NzToolTipModule,
+    // NzButtonModule,
+    NgZorroAntdModule,
 } from 'ng-zorro-antd';
 
 import { AntDatepickerComponent } from './antdatepicker/ant-datepicker.component'
@@ -26,26 +27,26 @@ import { AntFormComponent } from './ant-form.component'
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        NzGridModule,
-        NzFormModule,
-        NzDatePickerModule,
-        NzInputModule,
-        NzRadioModule, 
-        NzSelectModule,
-        NzToolTipModule,
-        NzButtonModule,
-        
+        // NzGridModule,
+        // NzFormModule,
+        // NzDatePickerModule,
+        // NzInputModule,
+        // NzRadioModule,
+        // NzSelectModule,
+        // NzToolTipModule,
+        // NzButtonModule,
+        NgZorroAntdModule,
     ],
     exports: [
-        NzGridModule,
-        NzFormModule,
-        NzDatePickerModule,
-        NzInputModule,
-        NzRadioModule,   
-        NzSelectModule,
-        NzToolTipModule,
-        NzButtonModule,
-        
+        // NzGridModule,
+        // NzFormModule,
+        // NzDatePickerModule,
+        // NzInputModule,
+        // NzRadioModule,
+        // NzSelectModule,
+        // NzToolTipModule,
+        // NzButtonModule,
+
 
         AntDatepickerComponent,
         AntInputComponent,
