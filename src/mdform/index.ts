@@ -8,6 +8,7 @@ import {
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatRadioModule,
     ErrorStateMatcher
 } from '@angular/material';
 import { Bootstrap3GridModule } from "ng2-bootstrap3-grid";
@@ -21,7 +22,7 @@ import { MdDatepickerComponent } from './mddatepicker/md-datepicker.component'
 import { MdInputComponent } from './mdinput/md-input.component'
 import { MdTextareaComponent } from './mdinput/md-textarea.component'
 import { MdCheckBoxComponent } from './mdcheckbox/md-checkbox.component'
-// import { MdRadioGroupComponent } from './mdradiogroup/md-radio-group.component'
+import { MdRadioGroupComponent } from './mdradiogroup/md-radio-group.component'
 import { MdSelectComponent } from './mdselect/md-select.component'
 import { MdFieldGroupComponent } from './fieldgroup/md-field-group.component'
 import { MdFieldsComponent } from './md-fields.component'
@@ -54,6 +55,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         MatInputModule,
         MatSelectModule,
         MatCheckboxModule,
+        MatRadioModule,        
         FlexLayoutModule,
         Bootstrap3GridModule,
     ],
@@ -62,7 +64,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         MdInputComponent,
         MdTextareaComponent,
         MdCheckBoxComponent,
-        // MdRadioGroupComponent,
+        MdRadioGroupComponent,
         MdSelectComponent,
         MdFieldGroupComponent,
         MdFieldsComponent,
@@ -74,7 +76,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         MdInputComponent,
         MdTextareaComponent,
         MdCheckBoxComponent,
-        // MdRadioGroupComponent,
+        MdRadioGroupComponent,
         MdSelectComponent,
         MdFieldGroupComponent,
         MdFieldsComponent,
@@ -90,7 +92,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         MdInputComponent,
         MdTextareaComponent,
         MdCheckBoxComponent,
-        // MdRadioGroupComponent,
+        MdRadioGroupComponent,
         MdSelectComponent,
         MdFieldGroupComponent,
         MdFieldsComponent,
@@ -105,7 +107,7 @@ export * from './mddatepicker/md-datepicker.field'
 export * from './mdinput/md-input.field'
 export * from './mdinput/md-textarea.field'
 export * from './mdcheckbox/md-checkbox.field'
-// export * from './mdradiogroup/md-radio-group.field'
+export * from './mdradiogroup/md-radio-group.field'
 export * from './mdselect/md-select.field'
 export * from './fieldgroup/md-field-group'
 

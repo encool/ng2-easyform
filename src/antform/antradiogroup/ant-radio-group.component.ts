@@ -3,11 +3,14 @@ import { FormGroup, AbstractControl } from '@angular/forms'
 
 import { EfDictdataService } from '../../core/service/dictdata.service'
 
+import { AntRadioGroupField } from "./ant-radio-group.field";
 import { UIComponent } from '../../core/decorator/ui-component.decorator'
 
 @UIComponent({
     selector: 'ef-ant-radio-group',
-    component: AntRadioGroupComponent
+    component: AntRadioGroupComponent,
+    name: "RadioGroupField",
+    field: AntRadioGroupField
 })
 @Component({
     selector: 'ef-ant-radio-group',
@@ -28,7 +31,7 @@ import { UIComponent } from '../../core/decorator/ui-component.decorator'
 `,
 })
 export class AntRadioGroupComponent {
-    @Input() field: any;
+    @Input() field: AntRadioGroupField;
     @Input() form: FormGroup;
     @Input() isEasyForm: boolean = false
 
@@ -85,6 +88,8 @@ export class AntRadioGroupComponent {
                     setTimeout(() => {
                         this.options = this.transform(this.field.options)
                     });
+                } else {
+                    this.options = this.field.options
                 }
             }
         }

@@ -8,6 +8,8 @@ import {
     MdSelectField,
     MdFormComponent,
     MdCheckboxField,
+    MdRadioGroupField,
+    AntFieldBase,
     uilist,
     uimap1,
 } from '../../../'
@@ -44,16 +46,54 @@ export class IndexComponent {
     @ViewChild("addform") addform: MdFormComponent
     @ViewChild("displayform") displayform: MdFormComponent
 
+    uiOptions = []
+    antOptions = []
+    mdOptions = []
+
+    fieldType: MdSelectField
+
     constructor() {
+
     }
+
     ngOnInit() {
+        uilist.forEach(value => {
+            if (value.name != "字段Group") {
+                if (value.field instanceof AntFieldBase) {
+                    this.antOptions.push(value)
+                } else {
+                    this.mdOptions.push(value)
+                }
+            }
+        })
+
         this.fields = [
+            new MdRadioGroupField({
+                key: "type",
+                label: "表单类型",
+                span: 12,
+                // disabled: true,
+                options: {
+                    ant: "Ant design",
+                    md: "Material design",
+                },
+                valueChange: (value) => {
+                    debugger
+                    if (value === "ant") {
+                        this.uiOptions = this.antOptions
+                        this.fieldType.options = this.antOptions
+                    } else {
+                        this.uiOptions = this.mdOptions
+                        this.fieldType.options = this.mdOptions
+                    }
+                }
+            }),
             new MdSelectField({
                 key: "fieldType",
                 label: "控件类别",
                 required: true,
                 span: 12,
-                options: uilist,
+                options: this.uiOptions,
                 optionId: "selector",
                 optionName: "name",
                 noneOption: false
@@ -106,7 +146,9 @@ export class IndexComponent {
         this.addform.form.reset()
     }
 
-    ngAfterViewInit() {
 
+
+    ngAfterViewInit() {
+        this.fieldType = this.addform.getField("fieldType") as any
     }
 }

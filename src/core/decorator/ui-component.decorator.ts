@@ -2,7 +2,12 @@
 import { Type } from '@angular/core';
 import { FieldBase } from "../field/field-base"
 
-let uilist = new Array()
+let uilist = new Array<{
+    selector: string,
+    component: any,
+    name?: string,
+    field?: typeof FieldBase
+}>()
 let uimap = new Map<string, Type<any>>()
 let uimap1 = new Map<string, any>()
 

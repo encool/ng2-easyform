@@ -6,7 +6,8 @@ import { UIComponent } from '../../core/decorator/ui-component.decorator'
 
 @UIComponent({
     selector: 'ef-ant-field-group',
-    component: AntFieldGroupComponent
+    component: AntFieldGroupComponent,
+    name:"字段Group"
 })
 @Component({
     selector: 'ef-ant-field-group',

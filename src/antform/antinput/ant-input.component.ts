@@ -1,11 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms'
 
+import { AntInputField } from "./ant-input.field";
 import { UIComponent } from '../../core/decorator/ui-component.decorator'
 
 @UIComponent({
     selector: 'ef-ant-input',
-    component: AntInputComponent
+    component: AntInputComponent,
+    name: "输入框",
+    field: AntInputField
 })
 @Component({
     selector: 'ef-ant-input',
@@ -24,7 +27,7 @@ import { UIComponent } from '../../core/decorator/ui-component.decorator'
     `,
 })
 export class AntInputComponent {
-    @Input() field: any;
+    @Input() field: AntInputField;
     @Input() form: FormGroup;
 
     key: string

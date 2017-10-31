@@ -1,13 +1,17 @@
 import { Component, Input, Optional } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms'
 
+import { AntSelectField } from "./ant-select.field";
+
 import { EfDictdataService } from '../../core/service/dictdata.service'
 
 import { UIComponent } from '../../core/decorator/ui-component.decorator'
 
 @UIComponent({
     selector: 'ef-ant-select',
-    component: AntSelectComponent
+    component: AntSelectComponent,
+    name: "选择框",
+    field: AntSelectField
 })
 @Component({
     selector: 'ef-ant-select',
@@ -30,7 +34,7 @@ import { UIComponent } from '../../core/decorator/ui-component.decorator'
 `,
 })
 export class AntSelectComponent {
-    @Input() field: any;
+    @Input() field: AntSelectField;
     @Input() form: FormGroup;
     @Input() isEasyForm: boolean;
 

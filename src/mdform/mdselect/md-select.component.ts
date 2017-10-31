@@ -121,6 +121,7 @@ export class MdSelectComponent implements OnInit {
     }
 
     patchValueToView() {
+        //contrll value 是个数组 保存用逗号分隔的字符串
         if (this.controll.value && this.multiple && typeof this.controll.value == 'string') {
             let v: string = this.controll.value
             this.model = v.split(',')

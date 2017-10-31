@@ -1,11 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms'
 
+import { AntDatepickerField } from "./ant-datepicker.field";
 import { UIComponent } from '../../core/'
 
 @UIComponent({
     selector: 'ef-ant-datepicker',
-    component: AntDatepickerComponent
+    component: AntDatepickerComponent,
+    name: "时间日期选择",
+    field: AntDatepickerField
 })
 @Component({
     selector: 'ef-ant-datepicker',
@@ -23,7 +26,7 @@ import { UIComponent } from '../../core/'
     `,
 })
 export class AntDatepickerComponent {
-    @Input() field: any;
+    @Input() field: AntDatepickerField;
     @Input() form: FormGroup;
 
     key: string
