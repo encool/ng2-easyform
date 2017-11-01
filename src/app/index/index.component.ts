@@ -1,5 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 
+import { Observable } from "rxjs/Observable";
+import { Subject } from "rxjs/Subject";
+
 import {
     FieldBase,
     MdTextinputField,
@@ -49,8 +52,9 @@ export class IndexComponent {
     uiOptions = []
     antOptions = []
     mdOptions = []
+    uiOptionsSubject: Subject<any> = new Subject<any>()
 
-    fieldType: MdSelectField
+    // fieldType: MdSelectField
 
     constructor() {
 
@@ -59,7 +63,8 @@ export class IndexComponent {
     ngOnInit() {
         uilist.forEach(value => {
             if (value.name != "字段Group") {
-                if (value.field instanceof AntFieldBase) {
+                // if (value.field instanceof AntFieldBase) {
+                if (this.isAntForm(value)) {
                     this.antOptions.push(value)
                 } else {
                     this.mdOptions.push(value)
@@ -77,14 +82,14 @@ export class IndexComponent {
                     ant: "Ant design",
                     md: "Material design",
                 },
+                value: "ant",
                 valueChange: (value) => {
-                    debugger
                     if (value === "ant") {
                         this.uiOptions = this.antOptions
-                        this.fieldType.options = this.antOptions
+                        this.uiOptionsSubject.next(this.uiOptions)
                     } else {
                         this.uiOptions = this.mdOptions
-                        this.fieldType.options = this.mdOptions
+                        this.uiOptionsSubject.next(this.uiOptions)
                     }
                 }
             }),
@@ -93,7 +98,8 @@ export class IndexComponent {
                 label: "控件类别",
                 required: true,
                 span: 12,
-                options: this.uiOptions,
+                // options: this.uiOptions,
+                optionsOb: this.uiOptionsSubject,
                 optionId: "selector",
                 optionName: "name",
                 noneOption: false
@@ -146,9 +152,19 @@ export class IndexComponent {
         this.addform.form.reset()
     }
 
-
+    isAntForm(value: { selector: string }) {
+        if (value.selector.indexOf("ef-ant") != -1) {
+            return true
+        } else {
+            return false;
+        }
+    }
 
     ngAfterViewInit() {
-        this.fieldType = this.addform.getField("fieldType") as any
+        // this.fieldType = this.addform.getField("fieldType") as any
+        this.uiOptions = this.antOptions
+        setTimeout(() => {
+            this.uiOptionsSubject.next(this.uiOptions)
+        });
     }
 }

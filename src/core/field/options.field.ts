@@ -1,12 +1,13 @@
 import { FieldBase } from './field-base';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from "rxjs/Subject";
 
 import { ValidatorFn, AsyncValidatorFn, Validators } from '@angular/forms';
 
 export abstract class OptionsField extends FieldBase<any> {
     options?: any[] | any = [];
     optionsUrl?: string
-    optionsOb?: Observable<any>
+    optionsOb?: Observable<any> | Subject<any>
     dictName?: string
     optionId?: string
     optionName?: string
