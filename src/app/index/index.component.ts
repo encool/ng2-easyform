@@ -10,6 +10,7 @@ import {
     MdDatepickerField,
     MdSelectField,
     MdFormComponent,
+    AntFormComponent,
     MdCheckboxField,
     MdRadioGroupField,
     AntFieldBase,
@@ -22,18 +23,21 @@ import {
     template: `
     <div bsContainer style="padding:10px">  
         <div bsRow>
-            <div bsCol.sm="2">
-            
+            <div bsCol.sm="2">          
                 <ef-md-form #addform [fields]="fields"></ef-md-form>
                 <div>
                     <button mat-button color="primary" (click)="onAdd()">添加</button>
                     <button mat-button color="accent" (click)="onReset()">重置</button>
                 </div>
             </div>
-            <div bsCol.sm="10">
-                <ef-md-form #displayform [fields]="addedfields"></ef-md-form>
+            <div *ngIf="formType == 'md'" bsCol.sm="10">
+                <ef-md-form #displaymdform [fields]="addedfields"></ef-md-form>
                 <span>form value:{{formvalue}}</span>
-            </div>       
+            </div>  
+            <div *ngIf="formType == 'ant'" bsCol.sm="10">
+                <ef-ant-form #displayantform [fields]="addedfields"></ef-ant-form>
+                <span>form value:{{formvalue}}</span>
+            </div>                 
         </div>
 
     </div>
@@ -47,8 +51,11 @@ export class IndexComponent {
     formvalue: string
 
     @ViewChild("addform") addform: MdFormComponent
-    @ViewChild("displayform") displayform: MdFormComponent
 
+    @ViewChild("displaymdform") displaymdform: MdFormComponent
+    @ViewChild("displayantform") displayantform: AntFormComponent
+
+    formType: string = "ant"
     uiOptions = []
     antOptions = []
     mdOptions = []
@@ -84,12 +91,18 @@ export class IndexComponent {
                 },
                 value: "ant",
                 valueChange: (value) => {
-                    if (value === "ant") {
-                        this.uiOptions = this.antOptions
-                        this.uiOptionsSubject.next(this.uiOptions)
-                    } else {
-                        this.uiOptions = this.mdOptions
-                        this.uiOptionsSubject.next(this.uiOptions)
+                    if (value != null) {
+                        if (this.formType != value) {
+                            this.formType = value
+                            this.addedfields = []
+                        }
+                        if (value === "ant") {
+                            this.uiOptions = this.antOptions
+                            this.uiOptionsSubject.next(this.uiOptions)
+                        } else {
+                            this.uiOptions = this.mdOptions
+                            this.uiOptionsSubject.next(this.uiOptions)
+                        }
                     }
                 }
             }),
@@ -136,20 +149,34 @@ export class IndexComponent {
         let value = this.addform.form.value
         let uioption = uimap1.get(value.fieldType)
         let FieldType = uioption.field
-        // debugger
         let field = new FieldType(value)
         this.addedfields = this.addedfields.concat([field])
-        this.addform.form.reset()
+        this.onReset()
         setTimeout(() => {
-            this.displayform.form.valueChanges.subscribe(value => {
-                this.formvalue = JSON.stringify(value)
-            })
+            if (this.formType == "ant") {
+                this.displayantform.form.valueChanges.subscribe(value => {
+                    this.formvalue = JSON.stringify(value)
+                })
+            } else if (this.formType == "md") {
+                this.displaymdform.form.valueChanges.subscribe(value => {
+                    this.formvalue = JSON.stringify(value)
+                })
+            }
         });
         this.addform.markUnCheck()
     }
 
     onReset() {
+        let value = this.addform.form.value
+        for (let p in value) {
+            if (p != "type" && p != 'fieldType') {
+                value[p] = undefined
+            }
+        }
+        value.type = this.addform.form.value.type
+        value.fieldType = this.addform.form.value.fieldType
         this.addform.form.reset()
+        this.addform.form.patchValue(value)
     }
 
     isAntForm(value: { selector: string }) {

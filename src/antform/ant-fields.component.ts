@@ -49,9 +49,9 @@ export class AntFieldsComponent implements OnInit, AfterViewInit {
         if (changes['fields'] && changes['fields'].currentValue) {
             // debugger
             setTimeout(() => {
-                // debugger
+                this.wrapperRef.clear()
                 this.fields.forEach((field) => {
-                    // debugger
+                    
                     let comp: Type<any> = uimap.get(field.selector)
                     //没有找到对应的模板
                     if (!comp) {
