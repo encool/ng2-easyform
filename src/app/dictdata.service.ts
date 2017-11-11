@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, URLSearchParams, RequestOptions } from '@angular/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
@@ -13,17 +13,16 @@ export class DictdataService extends EfDictdataService {
 
     results: any
 
-    constructor(public http: Http) {
+    constructor(public http: HttpClient) {
         super(http)
     }
 
     getDictDataMaps(ids: string[]) {
         let url = this._prefix + this._getDictDataMaps
-        let headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
-        let options = new RequestOptions({ headers: headers });
+        let headers = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+        let options = { headers: headers };
 
         return this.http.post(url, JSON.stringify(ids), options)
-            .map((data) => data.json())
             .catch(this.handleError)
             .subscribe(
             data => {
@@ -38,17 +37,16 @@ export class DictdataService extends EfDictdataService {
     }
 
     getDictDataObserable(dictName: string): Observable<any[]> {
-        let urlSearchParams = new URLSearchParams();
+        let urlSearchParams = new HttpParams();
         urlSearchParams.set('dictTypeName', dictName);
         // urlSearchParams.set('', );
-        let headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
-        let options = new RequestOptions({
+        let headers = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+        let options = {
             headers: headers,
-            search: urlSearchParams
-        });
+            params: urlSearchParams
+        };
         // debugger
-        return this.http.get('./dict/getByDictTypeName', options)
-            .map((data) => data.json())
+        return this.http.get<any[]>('./dict/getByDictTypeName', options)
 
         // let baseUrl = 'ws/getDictDataMap'
         // let param = {

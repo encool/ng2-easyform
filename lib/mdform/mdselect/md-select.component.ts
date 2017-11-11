@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, AfterViewInit, SimpleChanges } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms';
-import { Headers, Http, URLSearchParams, RequestOptions } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import { MdSelectField } from './md-select.field'
@@ -59,7 +59,7 @@ export class MdSelectComponent implements OnInit {
 
     classExpression: any = {}
 
-    constructor(private http: Http, private efDictdataService: EfDictdataService) {
+    constructor(private http: HttpClient, private efDictdataService: EfDictdataService) {
 
     }
 
@@ -170,13 +170,13 @@ export class MdSelectComponent implements OnInit {
         let urlSearchParams = new URLSearchParams();
         //urlSearchParams.set('dictTypeName', dictName);
         // urlSearchParams.set('', );
-        let headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
-        let options = new RequestOptions({
+        let headers = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+        let options = {
             headers: headers,
             search: urlSearchParams
-        });
-        return this.http.get(url, options)
-            .map((data) => data.json())
+        };
+        return this.http.get<any[]>(url, options)
+
     }
 
     ngOnChanges(changes: SimpleChanges) {

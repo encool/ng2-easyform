@@ -5,37 +5,43 @@ import {
   MatNativeDateModule,
   MatButtonModule,
 } from '@angular/material'
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Bootstrap3GridModule } from "ng2-bootstrap3-grid";
 
-import { EasyFormCoreModule, EasyFormMdModule, EasyFormAntModule, EfDictdataService } from '../../'
+import {
+  EasyFormCoreModule,
+  EasyFormMdModule,
+  // EasyFormAntModule,
+  EfDictdataService
+} from '../../'
 
 import { AppComponent } from './app.component';
 import { DictdataService } from './dictdata.service';
 
 import { MdEasyformComponent } from './mdform/md-easyform.component'
-import { AntDynamicFormComponent } from "./antform/ant-dynamic-form.component";
+// import { AntDynamicFormComponent } from "./antform/ant-dynamic-form.component";
 import { IndexComponent } from './index/index.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MdEasyformComponent,
-    AntDynamicFormComponent,
+    // AntDynamicFormComponent,
     IndexComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
     MatButtonModule,
     EasyFormCoreModule,
     EasyFormMdModule,
-    EasyFormAntModule,
+    // EasyFormAntModule,
     Bootstrap3GridModule,
   ],
   providers: [
+    { provide: EfDictdataService, useClass: DictdataService, },
     { provide: EfDictdataService, useClass: DictdataService, },
   ],
   entryComponents: [],

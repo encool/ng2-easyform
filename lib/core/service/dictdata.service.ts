@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, URLSearchParams, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 // @Injectable()
 export abstract class EfDictdataService {
 
-    constructor(public http: Http) { }
+    constructor(public http: HttpClient) { }
 
     abstract getDictDataObserable(dictName: string): Observable<any[]>
 

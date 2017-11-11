@@ -10,13 +10,16 @@ import {
     MdDatepickerField,
     MdSelectField,
     MdFormComponent,
-    AntFormComponent,
+    // AntFormComponent,
     MdCheckboxField,
     MdRadioGroupField,
-    AntFieldBase,
+    // AntFieldBase,
     uilist,
     uimap1,
 } from '../../../'
+
+// <ef-ant-form #displayantform [fields]="addedfields"></ef-ant-form>
+// <span>form value:{{formvalue}}</span>
 
 @Component({
     selector: 'index-case',
@@ -35,8 +38,7 @@ import {
                 <span>form value:{{formvalue}}</span>
             </div>  
             <div *ngIf="formType == 'ant'" bsCol.sm="10">
-                <ef-ant-form #displayantform [fields]="addedfields"></ef-ant-form>
-                <span>form value:{{formvalue}}</span>
+
             </div>                 
         </div>
 
@@ -53,7 +55,7 @@ export class IndexComponent {
     @ViewChild("addform") addform: MdFormComponent
 
     @ViewChild("displaymdform") displaymdform: MdFormComponent
-    @ViewChild("displayantform") displayantform: AntFormComponent
+    // @ViewChild("displayantform") displayantform: AntFormComponent
 
     formType: string = "ant"
     uiOptions = []
@@ -86,7 +88,7 @@ export class IndexComponent {
                 span: 12,
                 // disabled: true,
                 options: {
-                    ant: "Ant design",
+                    // ant: "Ant design",
                     md: "Material design",
                 },
                 value: "ant",
@@ -154,9 +156,9 @@ export class IndexComponent {
         this.onReset()
         setTimeout(() => {
             if (this.formType == "ant") {
-                this.displayantform.form.valueChanges.subscribe(value => {
-                    this.formvalue = JSON.stringify(value)
-                })
+                // this.displayantform.form.valueChanges.subscribe(value => {
+                //     this.formvalue = JSON.stringify(value)
+                // })
             } else if (this.formType == "md") {
                 this.displaymdform.form.valueChanges.subscribe(value => {
                     this.formvalue = JSON.stringify(value)

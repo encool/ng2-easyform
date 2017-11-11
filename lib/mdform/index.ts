@@ -12,8 +12,8 @@ import {
     ErrorStateMatcher
 } from '@angular/material';
 import { Bootstrap3GridModule } from "ng2-bootstrap3-grid";
-import { FlexLayoutModule } from '@angular/flex-layout'
-import { EnFlexDirective } from './flex/en-flex'
+// import { FlexLayoutModule } from '@angular/flex-layout'
+// import { EnFlexDirective } from './flex/en-flex'
 
 import { FormstatusWrap } from '../core'
 
@@ -56,7 +56,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         MatSelectModule,
         MatCheckboxModule,
         MatRadioModule,        
-        FlexLayoutModule,
+        // FlexLayoutModule,
         Bootstrap3GridModule,
     ],
     exports: [
@@ -69,7 +69,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         MdFieldGroupComponent,
         MdFieldsComponent,
         MdFormComponent,
-        EnFlexDirective,
+        // EnFlexDirective,
     ],
     declarations: [
         MdDatepickerComponent,
@@ -82,7 +82,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         MdFieldsComponent,
         MdFormComponent,
 
-        EnFlexDirective,
+        // EnFlexDirective,
     ],
     providers: [
         { provide: ErrorStateMatcher, useClass: MyErrorStateMatcher }

@@ -4,8 +4,10 @@
   "description": "angular2 angular4 ng2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ng build --no-extract-license --prod --build-optimizer"
+    "clean:lib": "rimraf dist/grid",    
+    "build:app": "ng build --no-extract-license --prod --build-optimizer",
+    "buildpkg": "ng-packagr -p ng-package.json",
+    "publish:lib": "cnpm run clean:lib && cnpm run buildpkg"
   },
   "keywords": [
     "angular2",
@@ -17,30 +19,31 @@
   "author": "qiao.li",
   "license": "MIT",
   "dependencies": {
-    "@angular/cdk": "2.0.0-beta.12",
+    "@angular/cdk": "^5.0.0-rc.0",
     "ng-zorro-antd": "~0.6.0-rc.2",
     "ng2-bootstrap3-grid": "^0.0.2"
   },
   "devDependencies": {
-    "@angular/animations": "^4.0.0",
-    "@angular/cdk": "^2.0.0-beta.11",
-    "@angular/cli": "^1.4.1",
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/compiler-cli": "^4.3.6",
-    "@angular/core": "^4.0.0",
-    "@angular/flex-layout": "^2.0.0-beta.9",
-    "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "@angular/language-service": "^4.0.0",
-    "@angular/material": "^2.0.0-beta.11",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
-    "@angular/router": "^4.0.0",
+    "@angular/animations": "^5.0.0",
+    "@angular/cdk": "^5.0.0-rc.0",
+    "@angular/cli": "^1.5.0",
+    "@angular/common": "^5.0.0",
+    "@angular/compiler": "^5.0.0",
+    "@angular/compiler-cli": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/language-service": "^5.0.0",
+    "@angular/material": "^5.0.0-rc.0",
+    "@angular/platform-browser": "^5.0.0",
+    "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/router": "^5.0.0",
     "classlist.js": "^1.1.20150312",
-    "ng2-bootstrap3-grid": "^0.0.2",
-    "rxjs": "^5.4.2",
-    "typescript": "~2.5.0",
+    "cpr": "^3.0.1",
+    "ng-packagr": "^1.5.0",
+    "ng2-bootstrap3-grid": "^0.0.5",
+    "rimraf": "^2.6.2",
+    "rxjs": "^5.5.2",
+    "typescript": "~2.4.0",
     "web-animations-js": "^2.3.1"
   }
 }
