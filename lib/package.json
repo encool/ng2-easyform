@@ -2,23 +2,12 @@
   "name": "ng2-easyform",
   "version": "0.0.9",
   "description": "angular2 angular4 ng2",
-  "main": "./bundles/ng2-easyform.js",
-  "module": "./ng2-easyform.es5.js",
-  "es2015": "./ng2-easyform.js",
-  "typings": "./ng2-easyform.d.ts",
+  "main": "index.js",
   "scripts": {
     "clean:lib": "rimraf dist/grid",    
     "build:app": "ng build --no-extract-license --prod --build-optimizer",
     "buildpkg": "ng-packagr -p ng-package.json",
-    "clean": "rimraf out-tsc dist/*",
-    "prebuild": "npm run clean",
-    "build": "node build.js",
-    "ng": "ng",
-    "start": "ng serve",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "publish:lib": "cnpm run clean && cnpm run build"
+    "publish:lib": "cnpm run clean:lib && cnpm run buildpkg"
   },
   "keywords": [
     "angular2",

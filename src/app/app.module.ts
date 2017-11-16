@@ -13,7 +13,7 @@ import {
   EasyFormMdModule,
   // EasyFormAntModule,
   EfDictdataService
-} from '../../'
+} from '../../lib'
 
 import { AppComponent } from './app.component';
 import { DictdataService } from './dictdata.service';
