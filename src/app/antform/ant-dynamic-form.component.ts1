@@ -19,7 +19,7 @@ import {
     AntSelectField,
     AntDatepickerField,
     AntFormComponent
-} from '../../../'
+} from 'ng2-easyform'
 
 
 @Component({

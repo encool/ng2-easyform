@@ -21,7 +21,7 @@ import {
     MdFormComponent,
     MdCheckboxField,
     MdFieldGroup
-} from '../../../'
+} from 'ng2-easyform'
 
 @Component({
     selector: 'md-form-demo',
