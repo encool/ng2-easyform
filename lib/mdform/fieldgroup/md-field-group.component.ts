@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FieldGroup } from '../../core'
-import { FieldControlService } from '../../core/';
-import { UIComponent } from '../../core/'
-
+import { FieldGroup } from '../../core/field/field-group'
+import { UIComponent } from '../../core/decorator/ui-component.decorator'
+import { FieldControlService } from '../../core/field/field.control.service'
 @UIComponent({
     selector: 'ef-md-field-group',
     component: MdFieldGroupComponent,

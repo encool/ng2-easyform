@@ -2,7 +2,10 @@
   "name": "ng2-easyform",
   "version": "0.0.9",
   "description": "angular2 angular4 ng2",
-  "main": "index.js",
+  "main": "./bundles/ng2-easyform.js",
+  "module": "./ng2-easyform.es5.js",
+  "es2015": "./ng2-easyform.js",
+  "typings": "./ng2-easyform.d.ts",
   "scripts": {
     "clean:lib": "rimraf dist/grid",    
     "build:app": "ng build --no-extract-license --prod --build-optimizer",

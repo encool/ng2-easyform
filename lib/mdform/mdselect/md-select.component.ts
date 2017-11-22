@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import { MdSelectField } from './md-select.field'
-import { UIComponent, EfDictdataService } from '../../core/'
+import { UIComponent } from '../../core/decorator/ui-component.decorator'
+import { EfDictdataService } from '../../core/service/dictdata.service'
 // [(ngModel)]="model" 
 @UIComponent({
     selector: 'ef-md-select',
