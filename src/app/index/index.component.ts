@@ -17,6 +17,7 @@ import {
     uilist,
     uimap1,
 } from 'ng2-easyform'
+// } from '../../../dist'
 
 // <ef-ant-form #displayantform [fields]="addedfields"></ef-ant-form>
 // <span>form value:{{formvalue}}</span>

@@ -28,6 +28,9 @@ const ROLLUP_GLOBALS = {
     '@angular/forms':           'ng.forms',
     '@angular/http':            'ng.http',
     '@angular/router':          'ng.router',
+
+    '@angular/material':        'ng.material',
+    
     // XX: it could also be discussed to exclude the platform libraries here
     // Why? Library authors should try to not use the platform-specific code directly
     // Instead, libraries should depend on CommonModule from @angular/common
@@ -297,6 +300,8 @@ const ROLLUP_GLOBALS = {
     'rxjs/operator/zipProto':       'Rx.Observable.prototype',
     'rxjs/symbol/iterator':     'Rx.Symbol',
     'rxjs/symbol/observable':   'Rx.Symbol',
-    'rxjs/symbol/rxSubscriber': 'Rx.Symbol'
+    'rxjs/symbol/rxSubscriber': 'Rx.Symbol',
+
+    'ng2-bootstrap3-grid':       'null',
   };
   module.exports = ROLLUP_GLOBALS

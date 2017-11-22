@@ -14,6 +14,7 @@ import {
   // EasyFormAntModule,
   EfDictdataService
 } from 'ng2-easyform'
+// } from '../../dist'
 
 import { AppComponent } from './app.component';
 import { DictdataService } from './dictdata.service';
@@ -42,7 +43,7 @@ import { IndexComponent } from './index/index.component'
   ],
   providers: [
     { provide: EfDictdataService, useClass: DictdataService, },
-    { provide: EfDictdataService, useClass: DictdataService, },
+    // { provide: EfDictdataService, useClass: DictdataService, },
   ],
   entryComponents: [],
   bootstrap: [AppComponent]
