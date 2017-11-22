@@ -301,6 +301,7 @@ const ROLLUP_GLOBALS = {
 
     "@angular/material": "ng.material",
     "ng2-bootstrap3-grid": null,
+    "ng-zorro-antd": null,
     // '@angular/animations': 'ng.animations',
     // '@angular/core': 'ng.core',
     // '@angular/common': 'ng.common',

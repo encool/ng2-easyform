@@ -10,7 +10,7 @@ import { MdRadioGroupField } from "./md-radio-group.field";
     selector: 'ef-md-radios',
     component: MdRadioGroupComponent,
     field: MdRadioGroupField,
-    name: "选择框"
+    name: "RadiosGroup"
 })
 @Component({
     selector: 'ef-md-radios',

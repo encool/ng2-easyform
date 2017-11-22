@@ -31,8 +31,8 @@
   "license": "MIT",
   "dependencies": {
     "@angular/cdk": "^5.0.0-rc.0",
-    "ng-zorro-antd": "~0.6.0-rc.2",
-    "ng2-bootstrap3-grid": "^0.0.2"
+    "ng-zorro-antd": "~0.6.0",
+    "ng2-bootstrap3-grid": "^0.0.9"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
