@@ -116,7 +116,7 @@ return Promise.resolve()
   // Copy package files
   .then(() => Promise.resolve()
     .then(() => _relativeCopy('LICENSE', rootFolder, distFolder))
-    .then(() => _relativeCopy('package.json', srcFolder, distFolder))
+    .then(() => _relativeCopy('package.json', rootFolder, distFolder))
     .then(() => _relativeCopy('README.md', rootFolder, distFolder))
     .then(() => console.log('Package files copy succeeded.'))
   )

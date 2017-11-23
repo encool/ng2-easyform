@@ -2,7 +2,7 @@ import { Component, Input, OnInit, SimpleChange, ViewChild } from '@angular/core
 import { FormGroup, FormGroupDirective } from '@angular/forms';
 import { AntFieldBase } from './core/ant-field-base';
 import { AntFieldGroup } from './fieldgroup/ant-field-group'
-import { FieldControlService } from '../core';
+import { FieldControlService } from '../core/field/field.control.service';
 
 @Component({
     selector: 'ef-ant-form',

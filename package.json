@@ -1,6 +1,6 @@
 {
   "name": "ng2-easyform",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "angular2 angular4 ng2",
   "main": "./bundles/ng2-easyform.js",
   "module": "./ng2-easyform.es5.js",
@@ -51,7 +51,6 @@
     "classlist.js": "^1.1.20150312",
     "cpr": "^3.0.1",
     "ng-packagr": "^1.5.0",
-    "ng2-bootstrap3-grid": "^0.0.9",
     "rimraf": "^2.6.2",
     "rollup": "^0.42.0",
     "rollup-plugin-commonjs": "^8.0.2",
