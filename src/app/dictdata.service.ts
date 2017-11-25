@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
-import { EfDictdataService } from '../../'
+import { EfDictdataService } from '../../lib'
 
 @Injectable()
 export class DictdataService extends EfDictdataService {
