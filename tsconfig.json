@@ -13,8 +13,7 @@
     ],
     // "paths": {
     //   "ng2-easyform": [
-    //     "../lib",
-    //     "./lib"
+    //     "../lib"
     //   ] // This mapping is relative to "baseUrl"
     // },
     "lib": [

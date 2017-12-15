@@ -1,6 +1,6 @@
 {
   "name": "ng2-easyform",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "description": "angular2 angular4 ng2",
   "main": "./bundles/ng2-easyform.js",
   "module": "./ng2-easyform.es5.js",
@@ -18,7 +18,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish:lib": "cnpm run clean && cnpm run build"
+    "publish:lib": "cnpm run clean && cnpm run build",
+    "bundle-report:example": "webpack-bundle-analyzer out/example/stats.json",
+    "bundle-report:app": "webpack-bundle-analyzer out/app/stats.json"
   },
   "keywords": [
     "angular2",
@@ -30,13 +32,12 @@
   "author": "qiao.li",
   "license": "MIT",
   "dependencies": {
-    "@angular/cdk": "^5.0.0-rc.0",
-    "ng-zorro-antd": "~0.6.0",
+    "ng-zorro-antd": "~0.6.6",
     "ng2-bootstrap3-grid": "^0.0.9"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
-    "@angular/cdk": "^5.0.0-rc.0",
+    "@angular/cdk": "^5.0.1",
     "@angular/cli": "^1.5.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
@@ -44,7 +45,7 @@
     "@angular/core": "^5.0.0",
     "@angular/forms": "^5.0.0",
     "@angular/language-service": "^5.0.0",
-    "@angular/material": "^5.0.0-rc.0",
+    "@angular/material": "^5.0.1",
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
@@ -59,6 +60,7 @@
     "rollup-plugin-uglify": "^2.0.1",
     "rxjs": "^5.5.2",
     "typescript": "~2.4.0",
-    "web-animations-js": "^2.3.1"
+    "web-animations-js": "^2.3.1",
+    "webpack-bundle-analyzer": "^2.9.1"
   }
 }
