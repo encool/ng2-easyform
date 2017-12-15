@@ -4,8 +4,6 @@
     "target": "es5",
     "outDir": "../../out-tsc/lib-es5/",
     "baseUrl": "",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "types": []
   },
   "files": [
@@ -13,7 +11,8 @@
     "./typings.d.ts"
   ],
   "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
+    "annotateForClosureCompiler": false,
+    "annotationsAs": "decorators",
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "ng2-easyform.js",

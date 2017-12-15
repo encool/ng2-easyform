@@ -6,8 +6,6 @@
     "rootDir": "./",
     "baseUrl": "",
     "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,    
     "types": []
   },
   "files": [
