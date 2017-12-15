@@ -7,7 +7,7 @@ import { FormGroup } from '@angular/forms';
 import { AntFieldBase } from './core/ant-field-base';
 import { AntFieldGroup } from './fieldgroup/ant-field-group'
 
-import { uimap } from '../core'
+import { uimap } from '../core/decorator/ui-component.decorator'
 
 
 @Component({

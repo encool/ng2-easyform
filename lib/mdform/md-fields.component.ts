@@ -6,7 +6,7 @@ import {
 import { FormGroup } from '@angular/forms';
 import { FieldBase } from '../core';
 
-import { uimap } from '../core'
+import { uimap } from '../core/decorator/ui-component.decorator'
 
 // fxLayout='row' fxLayoutWrap fxLayoutGap="15px" fxLayoutGap.xs="0px" fxLayoutAlign="start baseline" style="padding:10px;align-content:flex-start"
 @Component({
