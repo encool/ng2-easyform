@@ -13,8 +13,8 @@ import {
   EasyFormMdModule,
   EasyFormAntModule,
   EfDictdataService
-} from 'ng2-easyform'
-// } from '../../dist'
+  // } from 'ng2-easyform'
+} from '../../lib'
 
 import { AppComponent } from './app.component';
 import { DictdataService } from './dictdata.service';
