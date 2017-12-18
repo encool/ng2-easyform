@@ -20,10 +20,11 @@ import { UIComponent } from '../../core'
           [labelPosition]="labelPosition"
           [formControl]="formControl"
           [bsCol.sm]="span" [bsCol.xs]="12"
-          style="padding-top: 20px;padding-bottom: 15px; min-height:66px">
+          style="padding-top: 20px;padding-bottom: 15px;">
         {{label}}
       </mat-checkbox>    
     `
+    // min-height:66px
     //   [eNfxFlex]="eNfxFlex" [eNfxFlex.xs]="eNfxFlexXs"  fxGrow="0"
 })
 export class MdCheckBoxComponent implements OnInit {
