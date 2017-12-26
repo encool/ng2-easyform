@@ -1,6 +1,6 @@
 {
   "name": "ng2-easyform",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "angular2 angular4 ng2",
   "main": "./bundles/ng2-easyform.js",
   "module": "./ng2-easyform.es5.js",
