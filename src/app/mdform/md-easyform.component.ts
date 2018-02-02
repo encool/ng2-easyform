@@ -29,6 +29,7 @@ import {
     template: `
     <ef-md-form [fields]="fields"></ef-md-form>
     <span>表单值：{{formvalue}}</span>
+    <button (click)="onClick($event)">点击</button>
 `,
 })
 export class MdEasyformComponent {
@@ -39,14 +40,16 @@ export class MdEasyformComponent {
     @ViewChild(MdFormComponent) form: MdFormComponent
 
     constructor() {
+
     }
+    disabledId:boolean = false
     ngOnInit() {
         this.fields = [
             new MdTextinputField({
                 key: "userId",
                 label: "用户ID",
                 required: true,
-                // disabled: true,
+                disabled: this.disabledId,
                 span: 4,
             }),
             new MdTextinputField({
@@ -129,6 +132,14 @@ export class MdEasyformComponent {
             }),
         ]
     }
+
+    onClick(e){
+        setTimeout(() => {
+            debugger
+            this.disabledId = !this.disabledId
+        });
+    }
+
     ngAfterViewInit() {
         this.form.form.valueChanges.subscribe(value => {
             this.formvalue = JSON.stringify(value)

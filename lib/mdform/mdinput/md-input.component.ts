@@ -18,7 +18,11 @@ import { MdTextinputField } from './md-input.field'
             [bsCol.sm]="span"
             [bsCol.xs]="12"
             [hideRequiredMarker]="false">
-          <input matInput [type]="field.type || field.params.inputType " [placeholder]="label" [formControl]="fieldControl">
+          <input matInput 
+            [type]="field.type || field.params.inputType " 
+            [placeholder]="label" 
+            [formControl]="fieldControl"
+            [disabled]="field.disabled">
           <mat-error *ngIf="fieldControl.hasError('required')">
           <strong>必填项</strong>
           </mat-error>          
