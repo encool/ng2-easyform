@@ -15,7 +15,9 @@ import { UIComponent } from '../../core'
     template:
     `
         <mat-form-field [bsCol.sm]="span" [bsCol.xs]="12">
-          <textarea  matInput [type]="field.type || field.params.inputType" [placeholder]="lable" [formControl]="formControl"></textarea>
+          <textarea  matInput [type]="field.type || field.params.inputType" [placeholder]="lable" [formControl]="formControl"
+            [disableControl]="field.disabled">
+          </textarea>
           <mat-error *ngIf="formControl.hasError('required')">
           <strong>必填项</strong>
           </mat-error>            

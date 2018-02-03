@@ -19,6 +19,7 @@ import { UIComponent } from '../../core'
           [indeterminate]="indeterminate"
           [labelPosition]="labelPosition"
           [formControl]="formControl"
+          [disableControl]="field.disabled"
           [bsCol.sm]="span" [bsCol.xs]="12"
           style="padding-top: 20px;padding-bottom: 15px;">
         {{label}}

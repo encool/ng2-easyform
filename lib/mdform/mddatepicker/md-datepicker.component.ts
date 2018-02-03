@@ -14,7 +14,7 @@ import { UIComponent } from '../../core/'
     selector: 'ef-md-datepicker',
     template: `
     <mat-form-field [bsCol.sm]="span" [bsCol.xs]="12">
-      <input matInput [matDatepicker]="myDatepicker" [placeholder]="label" [formControl]="formControl">
+      <input matInput [matDatepicker]="myDatepicker" [placeholder]="label" [formControl]="formControl" [disableControl]="field.disabled">
       <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
       <mat-datepicker [touchUi]="touchUi" #myDatepicker></mat-datepicker>    
       <mat-error *ngIf="formControl.hasError('matDatepickerParse');else elseBlock">

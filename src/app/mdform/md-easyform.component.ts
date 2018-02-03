@@ -20,6 +20,7 @@ import {
     MdSelectField,
     MdFormComponent,
     MdCheckboxField,
+    MdRadioGroupField,
     MdFieldGroup
     // } from 'ng2-easyform'
 } from '../../../lib'
@@ -27,9 +28,12 @@ import {
 @Component({
     selector: 'md-form-demo',
     template: `
-    <ef-md-form [fields]="fields"></ef-md-form>
-    <span>表单值：{{formvalue}}</span>
-    <button (click)="onClick($event)">点击</button>
+    <div bsContainerFluid> 
+        <ef-md-form [fields]="fields"></ef-md-form>
+        <span>表单值：{{formvalue}}</span>
+        <button mat-button (click)="onClick($event)">点击</button>
+        <button mat-button (click)="onCheckClick($event)">点击</button>
+    </div>
 `,
 })
 export class MdEasyformComponent {
@@ -42,14 +46,12 @@ export class MdEasyformComponent {
     constructor() {
 
     }
-    disabledId:boolean = false
     ngOnInit() {
         this.fields = [
             new MdTextinputField({
                 key: "userId",
                 label: "用户ID",
                 required: true,
-                disabled: this.disabledId,
                 span: 4,
             }),
             new MdTextinputField({
@@ -109,7 +111,16 @@ export class MdEasyformComponent {
                 label: "性别",
                 required: true,
                 span: 4,
-                dictName: '性别',
+                // dictName: '性别',
+                options: [{
+                    key: "m",
+                    value: "男"
+                },
+                {
+                    key: "f",
+                    value: "女"
+                }
+                ],
                 noneOption: false
             }),
             new MdTextareaField({
@@ -117,6 +128,21 @@ export class MdEasyformComponent {
                 label: "地址",
                 required: false,
                 span: 10,
+            }),
+            new MdRadioGroupField({
+                key: "radioGroup",
+                label: "radioGroup",
+                required: false,
+                options: [{
+                    key: "m",
+                    value: "男"
+                },
+                {
+                    key: "f",
+                    value: "女"
+                }
+                ],
+                span: 6,
             }),
             new MdTextareaField({
                 key: "userAddress1",
@@ -131,13 +157,27 @@ export class MdEasyformComponent {
                 span: 12,
             }),
         ]
+        // this.fields[0].disabled = this.disabledId
     }
 
-    onClick(e){
-        setTimeout(() => {
-            debugger
-            this.disabledId = !this.disabledId
-        });
+    onClick(e) {
+        this.fields[0].disabled = !this.fields[0].disabled
+        this.fields[1].disabled = !this.fields[1].disabled
+        this.fields[2].disabled = !this.fields[2].disabled
+        this.fields[3].disabled = !this.fields[3].disabled
+        this.fields[4].disabled = !this.fields[4].disabled
+        this.fields[5].disabled = !this.fields[5].disabled
+        this.fields[6].disabled = !this.fields[6].disabled
+        this.fields[7].disabled = !this.fields[7].disabled
+        this.fields[8].disabled = !this.fields[8].disabled
+
+        // this.fields[0].required = !this.fields[0].required
+        // this.fields[1].required = !this.fields[1].required
+        // this.fields[2].required = !this.fields[2].required
+    }
+
+    onCheckClick(e) {
+        this.form.form.markAsDirty()
     }
 
     ngAfterViewInit() {

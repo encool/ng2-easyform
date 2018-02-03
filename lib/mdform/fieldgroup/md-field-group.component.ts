@@ -12,7 +12,7 @@ import { FieldControlService } from '../../core/field/field.control.service'
     selector: 'ef-md-field-group',
     template: `
     <ng-container [formGroup]="form">
-        <ng-container [formGroupName]="field.groupName">
+        <ng-container [formGroupName]="field.groupName" [disableControl]="field.disabled">
         	<ef-md-fields [form]="form.controls[field.groupName]" [fields]="field.fields" [model]="model"></ef-md-fields>
         </ng-container>
     </ng-container>

@@ -15,7 +15,7 @@ import { MdRadioGroupField } from "./md-radio-group.field";
 @Component({
     selector: 'ef-md-radios',
     template: `
-    <mat-radio-group [bsCol.sm]="span" [bsCol.xs]="12" [formControl]="controll">
+    <mat-radio-group [bsCol.sm]="span" [bsCol.xs]="12" [formControl]="controll" [disableControl]="field.disabled">
         <mat-radio-button *ngFor="let option of options" [value]="option[optionId]">
             {{ option[optionName] }}
         </mat-radio-button>

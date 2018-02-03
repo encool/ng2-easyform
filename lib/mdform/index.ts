@@ -12,10 +12,8 @@ import {
     ErrorStateMatcher
 } from '@angular/material';
 import { Bootstrap3GridModule } from "ng2-bootstrap3-grid";
-// import { FlexLayoutModule } from '@angular/flex-layout'
-// import { EnFlexDirective } from './flex/en-flex'
 
-import { FormstatusWrap } from '../core'
+import { FormstatusWrap, EasyFormCoreModule } from '../core'
 
 
 import { MdDatepickerComponent } from './mddatepicker/md-datepicker.component'
@@ -55,9 +53,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         MatInputModule,
         MatSelectModule,
         MatCheckboxModule,
-        MatRadioModule,        
+        MatRadioModule,
         // FlexLayoutModule,
         Bootstrap3GridModule,
+
+        EasyFormCoreModule,
     ],
     exports: [
         MdDatepickerComponent,

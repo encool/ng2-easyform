@@ -1,4 +1,4 @@
-import { Input, Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 
 import { UIComponent, FieldBase } from '../../core/'
@@ -13,7 +13,7 @@ import { MdTextinputField } from './md-input.field'
 @Component({
     selector: 'ef-md-input',
     template:
-    `
+        `
         <mat-form-field
             [bsCol.sm]="span"
             [bsCol.xs]="12"
@@ -22,7 +22,8 @@ import { MdTextinputField } from './md-input.field'
             [type]="field.type || field.params.inputType " 
             [placeholder]="label" 
             [formControl]="fieldControl"
-            [disabled]="field.disabled">
+            [disableControl]="field.disabled"
+          >
           <mat-error *ngIf="fieldControl.hasError('required')">
           <strong>必填项</strong>
           </mat-error>          
@@ -69,5 +70,14 @@ export class MdInputComponent implements OnInit {
 
     ngAfterViewInit() {
 
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+        debugger
+        for (let propName in changes) {
+            let chng = changes[propName];
+            let cur = JSON.stringify(chng.currentValue);
+            let prev = JSON.stringify(chng.previousValue);
+        }
     }
 }

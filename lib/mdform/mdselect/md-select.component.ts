@@ -22,6 +22,7 @@ import { EfDictdataService } from '../../core/service/dictdata.service'
             [formControl]="controll"
             floatPlaceholder="never"
             [multiple]="multiple" 
+            [disableControl]="field.disabled"
             (change)=OnChange($event)>           
             <mat-option *ngIf="noneOption">无</mat-option>
             <mat-option *ngFor="let option of options" [value]="option[optionId]">{{ option[optionName] }}</mat-option>

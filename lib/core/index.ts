@@ -3,17 +3,22 @@ import { CommonModule } from '@angular/common';
 
 import { FieldControlService } from './field/field.control.service'
 import { FormstatusWrap } from './form/formstatus.wrap'
+import { DisableControlDirective } from "./control/disable-control.directive ";
+import { RequiredControlDirective } from "./control/required-control.directive";
 
 @NgModule({
     imports: [
         CommonModule,
     ],
     exports: [
-
+        DisableControlDirective,
+        RequiredControlDirective,
     ],
     declarations: [
         //avoid aot fails,ugly
-        FormstatusWrap
+        FormstatusWrap,
+        DisableControlDirective,
+        RequiredControlDirective,
     ],
     providers: [
         FieldControlService
