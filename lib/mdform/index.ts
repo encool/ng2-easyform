@@ -13,7 +13,7 @@ import {
 } from '@angular/material';
 import { Bootstrap3GridModule } from "ng2-bootstrap3-grid";
 
-import { FormstatusWrap, EasyFormCoreModule } from '../core'
+import { FormstatusWrap, EasyFormCoreModule } from '../core/index'
 
 
 import { MdDatepickerComponent } from './mddatepicker/md-datepicker.component'
@@ -103,12 +103,12 @@ export class EasyFormMdModule { }
 // export * from './core/ant-field-base'
 // export * from './core/ant-options.field'
 
-export * from './mddatepicker/md-datepicker.field'
-export * from './mdinput/md-input.field'
-export * from './mdinput/md-textarea.field'
-export * from './mdcheckbox/md-checkbox.field'
-export * from './mdradiogroup/md-radio-group.field'
-export * from './mdselect/md-select.field'
-export * from './fieldgroup/md-field-group'
+export { MdDatepickerField } from './mddatepicker/md-datepicker.field'
+export { MdTextinputField } from './mdinput/md-input.field'
+export { MdTextareaField } from './mdinput/md-textarea.field'
+export { MdCheckboxField } from './mdcheckbox/md-checkbox.field'
+export { MdRadioGroupField } from './mdradiogroup/md-radio-group.field'
+export { MdSelectField } from './mdselect/md-select.field'
+export { MdFieldGroup } from './fieldgroup/md-field-group'
 
-export * from './md-form.component'
+export { MdFormComponent } from './md-form.component'

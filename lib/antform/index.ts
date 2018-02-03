@@ -79,13 +79,13 @@ import { AntFormComponent } from './ant-form.component'
 })
 export class EasyFormAntModule { }
 
-export * from './core/ant-field-base'
-export * from './core/ant-options.field'
+export { AntFieldBase } from './core/ant-field-base'
+export { AntOptionsField } from './core/ant-options.field'
 
-export * from './antdatepicker/ant-datepicker.field'
-export * from './antinput/ant-input.field'
-export * from './antradiogroup/ant-radio-group.field'
-export * from './antselect/ant-select.field'
-export * from './fieldgroup/ant-field-group'
+export { AntDatepickerField } from './antdatepicker/ant-datepicker.field'
+export { AntInputField } from './antinput/ant-input.field'
+export { AntRadioGroupField } from './antradiogroup/ant-radio-group.field'
+export { AntSelectField } from './antselect/ant-select.field'
+export { AntFieldGroup } from './fieldgroup/ant-field-group'
 
-export * from './ant-form.component'
+export { AntFormComponent } from './ant-form.component'

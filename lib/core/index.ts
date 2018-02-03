@@ -28,11 +28,11 @@ import { RequiredControlDirective } from "./control/required-control.directive";
 export class EasyFormCoreModule { }
 
 export { FieldControlService } from './field/field.control.service'
-export * from './decorator/ui-component.decorator'
-export * from './form/formstatus.wrap'
+export { uilist, uimap, uimap1, UIComponent } from './decorator/ui-component.decorator'
+export { FormstatusWrap } from './form/formstatus.wrap'
 export { EfDictdataService } from './service/dictdata.service'
-export * from './field/field-base'
-export * from './field/field-array'
-export * from './field/field-group'
-export * from './field/options.field'
-export * from './field/query-operate'
+export { FieldBase } from './field/field-base'
+export { FieldArray } from './field/field-array'
+export { FieldGroup } from './field/field-group'
+export { OptionsField } from './field/options.field'
+export { QueryOperate } from './field/query-operate'
