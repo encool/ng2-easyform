@@ -31,8 +31,11 @@ import {
     <div bsContainerFluid> 
         <ef-md-form [fields]="fields"></ef-md-form>
         <span>表单值：{{formvalue}}</span>
-        <button mat-button (click)="onClick($event)">点击</button>
-        <button mat-button (click)="onCheckClick($event)">点击</button>
+        <div bsRow>        
+            <button mat-button (click)="onClick($event)">点击</button>
+            <button mat-button (click)="onClickPatchValue($event)">PatchValue</button>
+            <button mat-button (click)="onCheckClick($event)">点击</button>
+        </div>
     </div>
 `,
 })
@@ -178,6 +181,10 @@ export class MdEasyformComponent {
 
     onCheckClick(e) {
         this.form.form.markAsDirty()
+    }
+
+    onClickPatchValue(e) {
+        this.form.form.patchValue({ bornTime: new Date() })
     }
 
     ngAfterViewInit() {
