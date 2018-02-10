@@ -21,7 +21,7 @@ import { uimap } from '../core/decorator/ui-component.decorator'
 export class MdFieldsComponent implements OnInit, AfterViewInit {
     @Input() fields: FieldBase<any>[];
     @Input() form: FormGroup;
-    @Input() model: any;
+    // @Input() model: any;
 
 
     @ViewChild('wrapper', { read: ViewContainerRef }) wrapperRef: ViewContainerRef;

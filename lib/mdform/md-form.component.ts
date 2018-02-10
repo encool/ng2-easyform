@@ -8,7 +8,7 @@ import { FormstatusWrap } from "../core/form/formstatus.wrap";
     selector: 'ef-md-form',
     template: `
         <form (ngSubmit)="onSubmit()" [formGroup]="form" class="ef-md-form" role="form" bsRow>
-            <ef-md-fields [fields]="fields" [form]="form" [model]="model"></ef-md-fields>
+            <ef-md-fields [fields]="fields" [form]="form"></ef-md-fields>
         </form>    
     `,
     providers: [FieldControlService],
@@ -17,7 +17,7 @@ import { FormstatusWrap } from "../core/form/formstatus.wrap";
 })
 export class MdFormComponent implements OnInit {
     @Input() fields: FieldBase<any>[] = [];
-    @Input() model: any = {};
+    @Input() model: any
 
     @ViewChild(FormGroupDirective) ngForm: FormstatusWrap
     form: FormGroup;
