@@ -15,7 +15,7 @@ import { FormUtils } from "../../uitls/form.util";
     selector: 'ef-md-textarea',
     template:
         `
-        <mat-form-field [bsCol.sm]="span" [bsCol.xs]="12">
+        <mat-form-field [bsCol.sm]="span" [bsCol.xs]="12" [hidden]="this.field.hidden">
           <textarea  matInput [type]="field.type || field.params.inputType" [placeholder]="lable" [formControl]="fieldControl"
             [disableControl]="field.disabled">
           </textarea>

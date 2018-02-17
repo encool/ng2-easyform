@@ -57,12 +57,13 @@ export class MdEasyformComponent {
                 label: "用户ID",
                 // required: false,
                 span: 4,
-                asyncValidator: (control) => {
-                    return new Promise((resolve) => {
-                        let errors: ValidationErrors = { "myerror": "some wrong!" }
-                        resolve(errors)
-                    })
-                }
+                hidden: true,
+                // asyncValidator: (control) => {
+                //     return new Promise((resolve) => {
+                //         let errors: ValidationErrors = { "myerror": "some wrong!" }
+                //         resolve(errors)
+                //     })
+                // }
             }),
             new MdTextinputField({
                 key: "userName",
@@ -162,6 +163,7 @@ export class MdEasyformComponent {
             }),
             new MdTextareaField({
                 key: "userAddress1",
+                hidden: true,
                 label: "地址1",
                 required: false,
                 span: 8,

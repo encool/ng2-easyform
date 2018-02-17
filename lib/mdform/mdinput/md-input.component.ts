@@ -18,7 +18,8 @@ import { FormUtils } from "../../uitls/form.util";
         <mat-form-field
             [bsCol.sm]="span"
             [bsCol.xs]="12"
-            [hideRequiredMarker]="false">
+            [hideRequiredMarker]="false"
+            [hidden]="this.field.hidden">
           <input matInput 
             [type]="field.type || field.params.inputType " 
             [placeholder]="label" 

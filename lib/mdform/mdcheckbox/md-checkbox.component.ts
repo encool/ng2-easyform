@@ -20,8 +20,9 @@ import { UIComponent } from '../../core'
           [labelPosition]="labelPosition"
           [formControl]="formControl"
           [disableControl]="field.disabled"
+          [hidden]="this.field.hidden"
           [bsCol.sm]="span" [bsCol.xs]="12"
-          style="padding-top: 20px;padding-bottom: 15px;">
+          style="padding-top: 20px;padding-bottom: 15px; min-height: 65.5px;">
         {{label}}
       </mat-checkbox>    
     `

@@ -1,6 +1,6 @@
 {
   "name": "ng2-easyform",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "angular2 angular4 ng2",
   "main": "./bundles/ng2-easyform.js",
   "module": "./ng2-easyform.es5.js",
@@ -35,7 +35,7 @@
   "license": "MIT",
   "dependencies": {
     "ng-zorro-antd": "~0.6.6",
-    "ng2-bootstrap3-grid": "^0.0.9"
+    "ng2-bootstrap3-grid": "0.0.10"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
