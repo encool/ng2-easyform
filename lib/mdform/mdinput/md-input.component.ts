@@ -29,7 +29,7 @@ import { FormUtils } from "../../uitls/form.util";
           <strong>必填项</strong>
           </mat-error>   
           <mat-error *ngFor="let key of this.errorsKeys">
-          <strong>{{this.fieldControl.errors[key]}}</strong>
+          <strong>{{this.errors[key]}}</strong>
           </mat-error>                  
         </mat-form-field>      
   
@@ -60,7 +60,7 @@ export class MdInputComponent implements OnInit {
 
         this.fieldControl.statusChanges.subscribe(data => {
             this.errors = this.fieldControl.errors
-            FormUtils.doFormFieldInputStatusChanges(this.field, data, this.fieldControl.errors, this.errorsKeys)
+            FormUtils.doFormFieldInputStatusChanges(this.field, data, this.errors, this.errorsKeys)
         })
         this.fieldControl.valueChanges.subscribe(data => {
             // debugger

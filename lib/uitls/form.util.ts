@@ -4,15 +4,17 @@ export class FormUtils {
 
     static doFormFieldInputStatusChanges(field: FieldBase<any>, status: String,
         errors: any, errorsKeys: any[]) {
-        if ("INVALID" == status) {
-            FormUtils.doErrors(errors, errorsKeys)
+        if (errors == null) {
+            errorsKeys.length = 0
+            return
         }
+        FormUtils.doErrors(errors, errorsKeys)
         if (field.statusChange instanceof Function) {
             field.statusChange(status)
         }
     }
 
-    static doErrors(errors, errorsKeys:any[]) {
+    static doErrors(errors, errorsKeys: any[]) {
         errorsKeys.length = 0
         for (let p in errors) {
             if (p != "required") {

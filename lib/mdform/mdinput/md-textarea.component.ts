@@ -53,7 +53,7 @@ export class MdTextareaComponent implements OnInit {
         // debugger
         this.fieldControl.statusChanges.subscribe(data => {
             this.errors = this.fieldControl.errors
-            FormUtils.doFormFieldInputStatusChanges(this.field, data, this.fieldControl.errors, this.errorsKeys)
+            FormUtils.doFormFieldInputStatusChanges(this.field, data, this.errors, this.errorsKeys)
         })      
     }
 
