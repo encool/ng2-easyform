@@ -1,8 +1,9 @@
 import { Input, Component, OnInit, SimpleChanges } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, AbstractControl, Validators, ValidationErrors } from '@angular/forms';
 
 import { UIComponent, FieldBase } from '../../core/'
 import { MdTextinputField } from './md-input.field'
+import { FormUtils } from "../../uitls/form.util";
 
 @UIComponent({
     selector: 'ef-md-input',
@@ -26,7 +27,10 @@ import { MdTextinputField } from './md-input.field'
           >
           <mat-error *ngIf="fieldControl.hasError('required')">
           <strong>必填项</strong>
-          </mat-error>          
+          </mat-error>   
+          <mat-error *ngFor="let key of this.errorsKeys">
+          <strong>{{this.fieldControl.errors[key]}}</strong>
+          </mat-error>                  
         </mat-form-field>      
   
     `
@@ -39,8 +43,8 @@ export class MdInputComponent implements OnInit {
     label: string
     span: number = 12
 
-    eNfxFlex: string
-    eNfxFlexXs: string
+    errors: ValidationErrors = {}
+    errorsKeys: String[] = []
 
     fieldControl: AbstractControl
     constructor() { }
@@ -49,16 +53,14 @@ export class MdInputComponent implements OnInit {
         this.fieldControl = this.form.get(this.field.key)
         this.span = this.field.span == undefined ? 4 : this.field.span
         this.label = this.field.label
-        this.eNfxFlex = "calc(" + (this.span / 12) * 100 + "% - 15px)"
+        // this.eNfxFlex = "calc(" + (this.span / 12) * 100 + "% - 15px)"
         // this.eNfxFlexXs = "calc(100% - 15px)"
-        this.eNfxFlexXs = "100%"
+        // this.eNfxFlexXs = "100%"
         // debugger
 
         this.fieldControl.statusChanges.subscribe(data => {
-            // debugger
-            if (this.field.statusChange instanceof Function) {
-                this.field.statusChange(data)
-            }
+            this.errors = this.fieldControl.errors
+            FormUtils.doFormFieldInputStatusChanges(this.field, data, this.fieldControl.errors, this.errorsKeys)
         })
         this.fieldControl.valueChanges.subscribe(data => {
             // debugger
@@ -73,7 +75,8 @@ export class MdInputComponent implements OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        debugger
+        // debugger
+        this.fieldControl
         for (let propName in changes) {
             let chng = changes[propName];
             let cur = JSON.stringify(chng.currentValue);

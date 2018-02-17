@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { ValidationErrors } from "@angular/forms";
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -54,8 +55,14 @@ export class MdEasyformComponent {
             new MdTextinputField({
                 key: "userId",
                 label: "用户ID",
-                required: true,
+                // required: false,
                 span: 4,
+                asyncValidator: (control) => {
+                    return new Promise((resolve) => {
+                        let errors: ValidationErrors = { "myerror": "some wrong!" }
+                        resolve(errors)
+                    })
+                }
             }),
             new MdTextinputField({
                 key: "userName",
@@ -131,6 +138,12 @@ export class MdEasyformComponent {
                 label: "地址",
                 required: false,
                 span: 10,
+                // asyncValidator: (control) => {
+                //     return new Promise((resolve) => {
+                //         let errors: ValidationErrors = { "myerror": "some wrong2222!" }
+                //         resolve(null)
+                //     })
+                // }                
             }),
             new MdRadioGroupField({
                 key: "radioGroup",

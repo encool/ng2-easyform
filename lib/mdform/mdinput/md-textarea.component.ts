@@ -1,8 +1,9 @@
 import { Input, Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, AbstractControl, Validators, ValidationErrors } from '@angular/forms';
 
 import { MdTextareaField } from './md-textarea.field'
 import { UIComponent } from '../../core'
+import { FormUtils } from "../../uitls/form.util";
 
 @UIComponent({
     selector: 'ef-md-textarea',
@@ -13,14 +14,17 @@ import { UIComponent } from '../../core'
 @Component({
     selector: 'ef-md-textarea',
     template:
-    `
+        `
         <mat-form-field [bsCol.sm]="span" [bsCol.xs]="12">
-          <textarea  matInput [type]="field.type || field.params.inputType" [placeholder]="lable" [formControl]="formControl"
+          <textarea  matInput [type]="field.type || field.params.inputType" [placeholder]="lable" [formControl]="fieldControl"
             [disableControl]="field.disabled">
           </textarea>
-          <mat-error *ngIf="formControl.hasError('required')">
+          <mat-error *ngIf="fieldControl.hasError('required')">
           <strong>必填项</strong>
-          </mat-error>            
+          </mat-error>     
+          <mat-error *ngFor="let key of this.errorsKeys">
+          <strong>{{this.errors[key]}}</strong>
+          </mat-error>                 
         </mat-form-field>      
   
     `
@@ -33,20 +37,24 @@ export class MdTextareaComponent implements OnInit {
     lable: string
     span: number = 12
 
-    eNfxFlex: string
-    eNfxFlexXs: string
+    errors: ValidationErrors = {}
+    errorsKeys: String[] = []
 
-    formControl: AbstractControl
+    fieldControl: AbstractControl
     constructor() { }
 
     ngOnInit() {
-        this.formControl = this.form.get(this.field.key)
+        this.fieldControl = this.form.get(this.field.key)
         this.span = this.field.span == undefined ? 4 : this.field.span
         this.lable = this.field.label
-        this.eNfxFlex = "calc(" + (this.span / 12) * 100 + "% - 15px)"
+        // this.eNfxFlex = "calc(" + (this.span / 12) * 100 + "% - 15px)"
         // this.eNfxFlexXs = "calc(100% - 15px)"
-        this.eNfxFlexXs = "100%"
+        // this.eNfxFlexXs = "100%"
         // debugger
+        this.fieldControl.statusChanges.subscribe(data => {
+            this.errors = this.fieldControl.errors
+            FormUtils.doFormFieldInputStatusChanges(this.field, data, this.fieldControl.errors, this.errorsKeys)
+        })      
     }
 
 }

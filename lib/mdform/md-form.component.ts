@@ -38,6 +38,7 @@ export class MdFormComponent implements OnInit {
         // eval("console.log(this);this.fieldControl.valueChanges.subscribe(data => {console.log('come in!',data)})")
         // this.form.
         if (this.model) {
+            debugger
             setTimeout(() => {
                 this.form.patchValue(this.model)
                 // this.form.updateValueAndValidity()                
