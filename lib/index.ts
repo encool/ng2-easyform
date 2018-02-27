@@ -36,6 +36,7 @@ export {
     FieldBase,
     FieldArray,
     FieldGroup,
+    InputField,
     OptionsField,
     QueryOperate,
 } from './core/index'
