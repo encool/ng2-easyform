@@ -4,13 +4,13 @@ import { FormsModule, ReactiveFormsModule, FormControl, FormGroupDirective, NgFo
 
 import {
     MatDatepickerModule,
-    MatNativeDateModule,
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
     ErrorStateMatcher
 } from '@angular/material';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { Bootstrap3GridModule } from "ng2-bootstrap3-grid";
 
 import { FormstatusWrap, EasyFormCoreModule } from '../core/index'
@@ -49,7 +49,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         FormsModule,
         ReactiveFormsModule,
         MatDatepickerModule,
-        MatNativeDateModule,
+        // MatMomentDateModule,
         MatInputModule,
         MatSelectModule,
         MatCheckboxModule,

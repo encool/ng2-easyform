@@ -34,6 +34,7 @@
   "author": "qiao.li",
   "license": "MIT",
   "dependencies": {
+    "@angular/material-moment-adapter": "^5.2.4",
     "ng-zorro-antd": "~0.6.6",
     "ng2-bootstrap3-grid": "0.0.10"
   },

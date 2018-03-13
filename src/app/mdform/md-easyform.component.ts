@@ -195,7 +195,10 @@ export class MdEasyformComponent {
     }
 
     onCheckClick(e) {
-        this.form.form.markAsDirty()
+        debugger
+        // this.form.form.markAsDirty()
+        let value = this.form.form.value
+        let json = JSON.stringify(value.bornTime)
     }
 
     onClickPatchValue(e) {
