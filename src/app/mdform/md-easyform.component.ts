@@ -202,6 +202,8 @@ export class MdEasyformComponent {
     }
 
     onClickPatchValue(e) {
+        // this.form.form.patchValue({ bornTime: 1520995378 })
+        // this.form.form.patchValue({ bornTime: 1520995378000 })
         this.form.form.patchValue({ bornTime: new Date() })
     }
 

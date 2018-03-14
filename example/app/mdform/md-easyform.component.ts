@@ -55,14 +55,15 @@ export class MdEasyformComponent {
             new MdTextinputField({
                 key: "userId",
                 label: "用户ID",
-                required: false,
+                // required: false,
                 span: 4,
-                asyncValidator: (control) => {
-                    return new Promise((resolve) => {
-                        let errors: ValidationErrors = { "myerror": "some wrong!" }
-                        resolve(errors)
-                    })
-                }                
+                hidden: true,
+                // asyncValidator: (control) => {
+                //     return new Promise((resolve) => {
+                //         let errors: ValidationErrors = { "myerror": "some wrong!" }
+                //         resolve(errors)
+                //     })
+                // }              
             }),
             new MdTextinputField({
                 key: "userName",
@@ -136,12 +137,12 @@ export class MdEasyformComponent {
             new MdTextareaField({
                 key: "userAddress",
                 label: "地址",
-                // required: false,
+                required: false,
                 span: 10,
                 // asyncValidator: (control) => {
                 //     return new Promise((resolve) => {
                 //         let errors: ValidationErrors = { "myerror": "some wrong2222!" }
-                //         resolve(errors)
+                //         resolve(null)
                 //     })
                 // }                 
             }),
@@ -162,6 +163,7 @@ export class MdEasyformComponent {
             }),
             new MdTextareaField({
                 key: "userAddress1",
+                hidden: true,
                 label: "地址1",
                 required: false,
                 span: 8,
@@ -193,11 +195,14 @@ export class MdEasyformComponent {
     }
 
     onCheckClick(e) {
-        this.form.form.markAsDirty()
+        debugger
+        // this.form.form.markAsDirty()
+        let value = this.form.form.value
+        let json = JSON.stringify(value.bornTime)
     }
 
     onClickPatchValue(e) {
-        this.form.form.patchValue({ bornTime: new Date() })
+        this.form.form.patchValue({ bornTime: 1520995378 })
     }
 
     ngAfterViewInit() {

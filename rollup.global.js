@@ -332,7 +332,7 @@ const ROLLUP_GLOBALS = {
     // '@angular/cdk/stepper': 'ng.cdk.stepper',
     // '@angular/cdk/table': 'ng.cdk.table',
   
-    // 'moment': 'moment',
+    'moment': 'moment',
     // 'moment/locale/zh-cn': null,
   
     // 'rxjs/Observer': 'Rx',
