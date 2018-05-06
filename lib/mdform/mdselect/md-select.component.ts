@@ -2,7 +2,7 @@ import { Component, Input, OnInit, AfterViewInit, SimpleChanges } from '@angular
 import { FormGroup, AbstractControl } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { MdSelectField } from './md-select.field'
 import { UIComponent } from '../../core/decorator/ui-component.decorator'
 import { EfDictdataService } from '../../core/service/dictdata.service'

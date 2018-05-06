@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Observable } from "rxjs/Observable";
-import { Subject } from "rxjs/Subject";
+import { Observable } from "rxjs";
+import { Subject } from "rxjs";
 
 import {
     FieldBase,
@@ -10,16 +10,19 @@ import {
     MdDatepickerField,
     MdSelectField,
     MdFormComponent,
-    AntFormComponent,
+    // AntFormComponent,
     MdCheckboxField,
     MdRadioGroupField,
-    AntFieldBase,
+    // AntFieldBase,
     uilist,
     uimap1,
 } from 'ng2-easyform'
 // } from '../../../dist'
 
-
+// <div *ngIf="formType == 'ant'" bsCol.sm="10">
+// <ef-ant-form #displayantform [fields]="addedfields"></ef-ant-form>
+// <span>form value:{{formvalue}}</span>
+// </div> 
 
 @Component({
     selector: 'index-case',
@@ -37,10 +40,7 @@ import {
                 <ef-md-form #displaymdform [fields]="addedfields"></ef-md-form>
                 <span>form value:{{formvalue}}</span>
             </div>  
-            <div *ngIf="formType == 'ant'" bsCol.sm="10">
-                <ef-ant-form #displayantform [fields]="addedfields"></ef-ant-form>
-                <span>form value:{{formvalue}}</span>
-            </div>                 
+                
         </div>
 
     </div>
@@ -56,7 +56,7 @@ export class IndexComponent {
     @ViewChild("addform") addform: MdFormComponent
 
     @ViewChild("displaymdform") displaymdform: MdFormComponent
-    @ViewChild("displayantform") displayantform: AntFormComponent
+    // @ViewChild("displayantform") displayantform: AntFormComponent
 
     formType: string = "ant"
     uiOptions = []
@@ -157,9 +157,9 @@ export class IndexComponent {
         this.onReset()
         setTimeout(() => {
             if (this.formType == "ant") {
-                this.displayantform.form.valueChanges.subscribe(value => {
-                    this.formvalue = JSON.stringify(value)
-                })
+                // this.displayantform.form.valueChanges.subscribe(value => {
+                //     this.formvalue = JSON.stringify(value)
+                // })
             } else if (this.formType == "md") {
                 this.displaymdform.form.valueChanges.subscribe(value => {
                     this.formvalue = JSON.stringify(value)

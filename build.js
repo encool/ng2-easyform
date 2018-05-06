@@ -76,30 +76,46 @@ return Promise.resolve()
 
     // UMD bundle.
     const umdConfig = Object.assign({}, rollupBaseConfig, {
-      entry: es5Entry,
-      dest: path.join(distFolder, `bundles`, `${libName}.umd.js`),
+      input: es5Entry,
+      output: {
+        file: path.join(distFolder, `bundles`, `${libName}.umd.js`),
+      },
+      // entry: es5Entry,
+      // dest: path.join(distFolder, `bundles`, `${libName}.umd.js`),
       format: 'umd',
     });
 
     // Minified UMD bundle.
     const minifiedUmdConfig = Object.assign({}, rollupBaseConfig, {
-      entry: es5Entry,
-      dest: path.join(distFolder, `bundles`, `${libName}.umd.min.js`),
+      input: es5Entry,
+      output: {
+        file: path.join(distFolder, `bundles`, `${libName}.umd.min.js`),
+      },
+      // entry: es5Entry,
+      // dest: path.join(distFolder, `bundles`, `${libName}.umd.min.js`),
       format: 'umd',
       plugins: rollupBaseConfig.plugins.concat([uglify({})])
     });
 
     // ESM+ES5 flat module bundle.
     const fesm5config = Object.assign({}, rollupBaseConfig, {
-      entry: es5Entry,
-      dest: path.join(distFolder, `${libName}.es5.js`),
+      input: es5Entry,
+      output: {
+        file: path.join(distFolder, `${libName}.es5.js`),
+      },
+      // entry: es5Entry,
+      // dest: path.join(distFolder, `${libName}.es5.js`),
       format: 'es'
     });
 
     // ESM+ES2015 flat module bundle.
     const fesm2015config = Object.assign({}, rollupBaseConfig, {
-      entry: es2015Entry,
-      dest: path.join(distFolder, `${libName}.js`),
+      input: es2015Entry,
+      output: {
+        file: path.join(distFolder, `${libName}.js`),
+      },
+      // entry: es2015Entry,
+      // dest: path.join(distFolder, `${libName}.js`),
       format: 'es'
     });
 
@@ -108,7 +124,10 @@ return Promise.resolve()
       minifiedUmdConfig,
       fesm5config,
       fesm2015config
-    ].map(cfg => rollup.rollup(cfg).then(bundle => bundle.write(cfg)));
+    ].map(cfg => {
+      rollup.rollup(cfg).then(bundle => bundle.write(cfg.output))
+    });
+
 
     return Promise.all(allBundles)
       .then(() => console.log('All bundles generated successfully.'))

@@ -1,5 +1,5 @@
 import { OptionsField } from '../../core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { ValidatorFn, AsyncValidatorFn, Validators } from '@angular/forms';
 

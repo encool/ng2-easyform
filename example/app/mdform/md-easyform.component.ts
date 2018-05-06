@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { ValidationErrors } from "@angular/forms";
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+// import 'rxjs/add/observable/throw';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/catch';
 
 // import { DynamicFormMComponent } from '../shared/form/dynamic-form-m.component'
 
