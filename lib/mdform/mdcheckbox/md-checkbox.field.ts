@@ -1,5 +1,5 @@
 
-import { FieldBase } from '../../core';
+import { FieldBase } from '../../core/field/field-base';
 
 export class MdCheckboxField extends FieldBase<any> {
     constructor(options: FieldBase<any>) {

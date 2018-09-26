@@ -13,17 +13,16 @@ import { UIComponent } from '../../core/decorator/ui-component.decorator'
 @Component({
     selector: 'ef-ant-input',
     template: `
-      <div nz-form-item nz-col [nzSpan]="field?.isHorizontal?span:false">
-        <div nz-form-label nz-col [nzSpan]="field?.isHorizontal?4:false">    
+      <nz-form-item nz-col [nzSpan]="field?.isHorizontal?span:false">
+        <nz-form-label nz-col [nzSpan]="field?.isHorizontal?4:false">    
             <label *ngIf="required; else elseBlock" nz-form-item-required>{{label}}</label>
             <ng-template #elseBlock><label>{{label}}</label></ng-template>
-        </div>
-        <div nz-form-control nz-col [nzSpan]="field?.isHorizontal?14:false" [nzValidateStatus]="form.controls[key]">
-          <nz-input [formControl]="fieldControl" [nzPlaceHolder]="label" [nzSize]="'large'" [nzDisabled]="field.disabled">
-          </nz-input>
-          <div nz-form-explain *ngIf="fieldControl.dirty&&fieldControl.hasError('required')">请输入{{label}}!</div>
-        </div>
-      </div>
+        </nz-form-label>
+        <nz-form-control nz-col [nzSpan]="field?.isHorizontal?14:false" [nzValidateStatus]="form.controls[key]">
+          <input nz-input [formControl]="fieldControl" [nzSize]="'large'">
+          <nz-form-explain *ngIf="fieldControl.dirty&&fieldControl.hasError('required')">请输入{{label}}!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
     `,
 })
 export class AntInputComponent {

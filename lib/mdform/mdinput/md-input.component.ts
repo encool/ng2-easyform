@@ -1,7 +1,7 @@
 import { Input, Component, OnInit, SimpleChanges } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl, Validators, ValidationErrors } from '@angular/forms';
+import { FormGroup, AbstractControl, Validators, ValidationErrors } from '@angular/forms';
 
-import { UIComponent, FieldBase } from '../../core/'
+import { UIComponent } from '../../core/decorator/ui-component.decorator'
 import { MdTextinputField } from './md-input.field'
 import { FormUtils } from "../../uitls/form.util";
 

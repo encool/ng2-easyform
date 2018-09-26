@@ -1,7 +1,4 @@
-import { OptionsField } from '../../core';
-import { Observable } from 'rxjs/Observable';
-
-import { ValidatorFn, AsyncValidatorFn, Validators } from '@angular/forms';
+import { OptionsField } from '../../core/field/options.field';
 
 export class MdSelectField extends OptionsField {
   noneOption: boolean = true

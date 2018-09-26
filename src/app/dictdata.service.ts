@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs'
+
+import { map,  catchError, } from 'rxjs/operators';
+
 
 import { EfDictdataService } from '../../lib'
 
@@ -23,7 +24,7 @@ export class DictdataService extends EfDictdataService {
         let options = { headers: headers };
 
         return this.http.post(url, JSON.stringify(ids), options)
-            .catch(this.handleError)
+            // .catchError(this.handleError)
             .subscribe(
             data => {
                 this.results = data

@@ -1,6 +1,6 @@
 import { FieldBase } from './field-base';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from "rxjs/Subject";
+import { Observable } from 'rxjs';
+import { Subject } from "rxjs";
 
 import { ValidatorFn, AsyncValidatorFn, Validators } from '@angular/forms';
 

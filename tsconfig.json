@@ -11,14 +11,10 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    // "paths": {
-    //   "ng2-easyform": [
-    //     "../lib"
-    //   ] // This mapping is relative to "baseUrl"
-    // },
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "baseUrl": "./"
   }
 }

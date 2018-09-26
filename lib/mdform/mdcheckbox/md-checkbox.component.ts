@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms'
 
 import { MdCheckboxField } from './md-checkbox.field'
-import { UIComponent } from '../../core'
+import { UIComponent } from '../../core/decorator/ui-component.decorator'
 
 @UIComponent({
     selector: 'ef-md-checkbox',

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, AfterViewInit, SimpleChanges } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms';
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 import { UIComponent } from '../../core/decorator/ui-component.decorator'
 import { EfDictdataService } from '../../core/service/dictdata.service'

@@ -15,19 +15,19 @@ import { UIComponent } from '../../core/decorator/ui-component.decorator'
 @Component({
     selector: 'ef-ant-radio-group',
     template: `
-      <div nz-form-item nz-col [nzSpan]="field?.isHorizontal?span:false">
-        <div nz-form-label nz-col [nzSpan]="field?.isHorizontal?4:false">
+      <nz-form-item nz-col [nzSpan]="field?.isHorizontal?span:false">
+        <nz-form-label nz-col [nzSpan]="field?.isHorizontal?4:false">
             <label *ngIf="required; else elseBlock" nz-form-item-required>{{label}}</label>
             <ng-template #elseBlock><label>{{label}}</label></ng-template>
-        </div>
-        <div nz-form-control nz-col [nzSpan]="field?.isHorizontal?14:false">
+        </nz-form-label>
+        <nz-form-control nz-col [nzSpan]="field?.isHorizontal?14:false">
           <nz-radio-group [formControl]="fieldControl">
             <label nz-radio-button *ngFor="let option of options" [nzValue]="option[optionId]">
               <span>{{option[optionName]}}</span>
             </label>
           </nz-radio-group>
-        </div>
-      </div>
+        </nz-form-control>
+      </nz-form-item>
 `,
 })
 export class AntRadioGroupComponent {

@@ -299,6 +299,9 @@ const ROLLUP_GLOBALS = {
     'rxjs/symbol/observable':   'Rx.Symbol',
     'rxjs/symbol/rxSubscriber': 'Rx.Symbol',
 
+    'rxjs'          : 'Rx',
+    'rxjs/operators': 'Rx.Observable.prototype',
+
     "@angular/material": "ng.material",
     "ng2-bootstrap3-grid": null,
     "ng-zorro-antd": null,

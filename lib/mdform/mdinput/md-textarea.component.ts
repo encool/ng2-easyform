@@ -2,7 +2,7 @@ import { Input, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, AbstractControl, Validators, ValidationErrors } from '@angular/forms';
 
 import { MdTextareaField } from './md-textarea.field'
-import { UIComponent } from '../../core'
+import { UIComponent } from '../../core/decorator/ui-component.decorator'
 import { FormUtils } from "../../uitls/form.util";
 
 @UIComponent({

@@ -16,21 +16,21 @@ import { UIComponent } from '../../core/decorator/ui-component.decorator'
 @Component({
     selector: 'ef-ant-select',
     template: `
-      <div nz-form-item nz-col [nzSpan]="field?.isHorizontal?span:false">
-        <div nz-form-label nz-col [nzSpan]="field?.isHorizontal?4:false">
+      <nz-form-item nz-col [nzSpan]="field?.isHorizontal?span:false">
+        <nz-form-label nz-col [nzSpan]="field?.isHorizontal?4:false">
             <label *ngIf="required; else elseBlock" nz-form-item-required>{{label}}</label>
             <ng-template #elseBlock><label>{{label}}</label></ng-template>
-        </div>
-        <div nz-form-control nz-col [nzSpan]="field?.isHorizontal?14:false">
+        </nz-form-label>
+        <nz-form-control nz-col [nzSpan]="field?.isHorizontal?14:false">
           <nz-select [formControl]="fieldControl" [nzSize]="'large'" [nzMode]="'multiple'">
             <nz-option *ngFor="let option of options" 
                 [nzValue]="option[optionId]" 
                 [nzLabel]="option[optionName]">
             </nz-option>
           </nz-select>
-            <div nz-form-explain *ngIf="fieldControl.dirty&&fieldControl.hasError('required')">请输入{{label}}!</div>            
-        </div>
-      </div>
+            <nz-form-explain *ngIf="fieldControl.dirty&&fieldControl.hasError('required')">请输入{{label}}!</nz-form-explain>            
+        </nz-form-control>
+      </nz-form-item>
 `,
 })
 export class AntSelectComponent {
