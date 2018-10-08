@@ -15,6 +15,14 @@
       "es2016",
       "dom"
     ],
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "ngx-easyform": [
+        "dist/ngx-easyform"
+      ],
+      "ngx-easyform/*": [
+        "dist/ngx-easyform/*"
+      ]
+    }
   }
 }

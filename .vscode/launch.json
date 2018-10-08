@@ -8,7 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "启动程序",
-            "program": "${workspaceFolder}/build.js",
+            "program": "${workspaceFolder}/node_modules/@angular/cli/bin/ng",
+            "args": ["build", "ngx-easyform"],
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
