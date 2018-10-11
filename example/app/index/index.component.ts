@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Observable } from "rxjs/Observable";
-import { Subject } from "rxjs/Subject";
+import { Observable } from "rxjs";
+import { Subject } from "rxjs";
 
 import {
     FieldBase,
@@ -16,7 +16,7 @@ import {
     AntFieldBase,
     uilist,
     uimap1,
-} from 'ng2-easyform'
+} from 'ngx-easyform'
 // } from '../../../dist'
 
 

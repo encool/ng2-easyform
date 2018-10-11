@@ -16,9 +16,7 @@ import {
     AntFieldBase,
     uilist,
     uimap1,
-    // } from 'ng2-easyform'
-} from '../../../lib'
-
+} from 'ngx-easyform'
 
 
 @Component({

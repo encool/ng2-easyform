@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs'
 
-import { map,  catchError, } from 'rxjs/operators';
+import { map, catchError, } from 'rxjs/operators';
 
 
-import { EfDictdataService } from '../../lib'
+import { EfDictdataService } from 'ngx-easyform'
 
 @Injectable()
 export class DictdataService extends EfDictdataService {
@@ -26,9 +26,9 @@ export class DictdataService extends EfDictdataService {
         return this.http.post(url, JSON.stringify(ids), options)
             // .catchError(this.handleError)
             .subscribe(
-            data => {
-                this.results = data
-            }
+                data => {
+                    this.results = data
+                }
             )
     }
 

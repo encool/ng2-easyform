@@ -19,9 +19,7 @@ import {
     AntSelectField,
     AntDatepickerField,
     AntFormComponent
-    // } from 'ng2-easyform'
-} from '../../../lib'
-
+} from 'ngx-easyform'
 
 @Component({
     selector: 'ant-df',

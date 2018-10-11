@@ -19,7 +19,7 @@ import {
     AntSelectField,
     AntDatepickerField,
     AntFormComponent
-} from 'ng2-easyform'
+} from 'ngx-easyform'
 // } from '../../../dist'
 
 

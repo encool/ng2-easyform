@@ -23,8 +23,7 @@ import {
     MdCheckboxField,
     MdRadioGroupField,
     MdFieldGroup
-    // } from 'ng2-easyform'
-} from '../../../lib'
+} from 'ngx-easyform'
 
 @Component({
     selector: 'md-form-demo',

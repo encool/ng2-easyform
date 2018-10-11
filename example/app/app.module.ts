@@ -13,7 +13,7 @@ import {
   EasyFormMdModule,
   EasyFormAntModule,
   EfDictdataService
-} from 'ng2-easyform'
+} from 'ngx-easyform'
 // } from '../../dist'
 
 import { AppComponent } from './app.component';
