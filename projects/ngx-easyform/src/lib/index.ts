@@ -30,7 +30,7 @@ export {
 
 export {
     EasyFormCoreModule,
-    FieldControlService, uilist, uimap, uimap1, UIComponent,
+    FieldControlService, uilist, uimap, uimap1, UIComponent, RegistComponent,
     FormstatusWrap,
     EfDictdataService,
     FieldBase,

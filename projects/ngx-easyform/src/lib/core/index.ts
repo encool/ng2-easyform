@@ -48,7 +48,7 @@ export class EasyFormCoreModule {
 }
 
 export { FieldControlService } from './field/field.control.service'
-export { uilist, uimap, uimap1, UIComponent } from './decorator/ui-component.decorator'
+export { uilist, uimap, uimap1, UIComponent, RegistComponent } from './decorator/ui-component.decorator'
 export { FormstatusWrap } from './form/formstatus.wrap'
 export { EfDictdataService } from './service/dictdata.service'
 export { FieldBase } from './field/field-base'
