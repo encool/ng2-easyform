@@ -39,5 +39,6 @@ export {
     InputField,
     OptionsField,
     QueryOperate,
+    CommonField,
 } from './core/index'
 

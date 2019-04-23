@@ -49,7 +49,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         FormsModule,
         ReactiveFormsModule,
         MatDatepickerModule,
-        // MatMomentDateModule,
+        MatMomentDateModule,
         MatInputModule,
         MatSelectModule,
         MatCheckboxModule,

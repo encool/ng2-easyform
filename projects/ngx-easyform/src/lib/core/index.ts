@@ -41,7 +41,7 @@ export class EasyFormCoreModule {
             providers: [
                 FieldControlService,
                 { provide: DateAdapter, useClass: EfDateAdapter },
-                {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS}
+                { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS }
             ],
         }
     }
@@ -57,3 +57,4 @@ export { InputField } from './field/input.field'
 export { FieldGroup } from './field/field-group'
 export { OptionsField } from './field/options.field'
 export { QueryOperate } from './field/query-operate'
+export { CommonField } from './field/common.field'
